@@ -36,7 +36,12 @@ gLane.selectAll("g").data(LANES).join(enter => {
 });
 const axisLine = gAxis.append("line").attr("class", "tl-axis");
 export const playLine = gPlay.append("line").attr("class", "playhead").attr("stroke", "url(#playGrad)").style("display", "none");
-export const playDot = gPlay.append("circle").attr("r", 4).style("fill", "var(--accent)").attr("filter", "url(#sparkGlow)").style("display", "none");
+// Playhead handle: drawn above the axis (outside the clip) and draggable to scrub through history.
+export const playDot = tlRoot.append("g").attr("class", "playhandle").style("display", "none")
+  .attr("aria-label", "Playhead: drag to move through time");
+playDot.append("circle").attr("class", "ph-hit").attr("r", 18);
+playDot.append("circle").attr("class", "ph-halo").attr("r", 13);
+playDot.append("circle").attr("class", "ph-dot").attr("r", 7.5);
 
 /* ---- scales: centuries of roots squeezed on the left, the LLM era stretched out on the right ---- */
 const DOM = [1820, 1970, 2010, 2016, 2020, 2023, 2024, 2025, 2026, 2027];

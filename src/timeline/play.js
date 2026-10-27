@@ -1,6 +1,6 @@
 // "Play history": a playhead sweeps through time and each term is born as it passes.
 // state.play: idle -> playing <-> paused -> idle (Stop, leaving the lanes, or reaching the end).
-import { select as d3select, timer, easeBackOut, easeCubicOut } from "d3";
+import { select as d3select, timer, drag, easeBackOut, easeCubicOut } from "d3";
 import { rr } from "../data.js";
 import { state, set, on } from "../state.js";
 import { select } from "../selection.js";
@@ -41,19 +41,35 @@ function start() {
     if (state.play === "playing") run();
   }, mot(850));
 }
+const span = () => { const { M } = lanes, X0 = M.l - 10, X1 = innerWidth - M.r + 4; return [X0, X1]; };   // read live so a resize mid-play stays correct
+/** Put the playhead at progress p (0..1). Terms before it are born; when scrubbing back, later ones disappear again. */
+function render(animate = true) {
+  const [X0, X1] = span(), X = X0 + (X1 - X0) * p;
+  lanes.playLine.attr("x1", X).attr("x2", X);
+  lanes.playDot.attr("transform", `translate(${X},${+lanes.playLine.attr("y2") || innerHeight - lanes.M.b})`).attr("aria-valuenow", Math.round(p * 100));
+  wm.textContent = yearLabel(Math.min(2026.99, lanes.xz.invert(Math.max(X, lanes.M.l))));
+  lanes.dotSel.each(function (n) {
+    const isBorn = born.has(n.id);
+    if (!isBorn && n.tx <= X) { born.add(n.id); animate ? birth(this, n) : d3select(this).classed("unborn", false); }
+    else if (isBorn && n.tx > X) { born.delete(n.id); d3select(this).classed("unborn", true).classed("born", false).select("circle").interrupt().attr("r", rr(n)); }
+  });
+  if (!animate) lanes.arcSel.classed("unborn", e => !born.has(e.t.id));
+}
 function run() {
   let last = null;
   tmr = timer(el => {
     if (last === null) last = el;
     p = Math.min(1, p + ((el - last) * speed) / playMs()); last = el;
-    const { M, xz } = lanes, X0 = M.l - 10, X1 = innerWidth - M.r + 4, X = X0 + (X1 - X0) * p;   // read live so a resize mid-play stays correct
-    lanes.playLine.attr("x1", X).attr("x2", X);
-    lanes.playDot.attr("cx", X).attr("cy", innerHeight - M.b + 8);
-    wm.textContent = yearLabel(Math.min(2026.99, xz.invert(Math.max(X, M.l))));
-    lanes.dotSel.each(function (n) { if (!born.has(n.id) && n.tx <= X) { born.add(n.id); birth(this, n); } });
+    render();
     if (p >= 1) stop(true);
   });
 }
+/** Drag the playhead: pauses while dragging, resumes afterwards if it was playing. */
+let wasPlaying = false;
+const scrub = drag()
+  .on("start", e => { e.sourceEvent?.stopPropagation(); wasPlaying = state.play === "playing"; if (wasPlaying) pause(); lanes.playDot.classed("dragging", true); })
+  .on("drag", e => { const [X0, X1] = span(); p = Math.max(0, Math.min(0.999, (e.x - X0) / (X1 - X0))); render(false); })
+  .on("end", () => { lanes.playDot.classed("dragging", false); if (wasPlaying) resume(); });
 function pause() { if (state.play !== "playing") return; tmr?.stop(); tmr = null; set({ play: "paused" }); }
 function resume() { if (state.play !== "paused") return; set({ play: "playing" }); run(); }
 function birth(el, n) {
@@ -88,6 +104,7 @@ export function init() {
   playBtn.onclick = e => { e.stopPropagation(); togglePlay(); };
   stopBtn.onclick = e => { e.stopPropagation(); stop(); };
   $("speed").onclick = e => { e.stopPropagation(); speed = SPEEDS[(SPEEDS.indexOf(speed) + 1) % SPEEDS.length]; $("speed").textContent = speed + "×"; };
+  lanes.playDot.call(scrub);
   buttons();
   on("play", buttons);
   on(["view", "tlMode"], s => { if (s.play !== "idle" && (s.view !== "timeline" || s.tlMode !== "lanes")) stop(); });

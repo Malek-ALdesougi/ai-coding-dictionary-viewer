@@ -47,3 +47,13 @@ body:not([data-view="timeline"]) .tl-controls { opacity: 0; transform: translate
 .tl-today .pulse { fill: none; stroke: var(--accent); animation: todayPulse 2.2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
 @keyframes todayPulse { from { transform: scale(1); opacity: .8; } to { transform: scale(3.2); opacity: 0; } }
 .btn.theme { min-width: 74px; }
+/* playhead handle: above the axis, draggable */
+.playhandle { cursor: grab; touch-action: none; }
+.playhandle.dragging { cursor: grabbing; }
+.playhandle .ph-hit { fill: transparent; }
+.playhandle .ph-halo { fill: var(--accent); opacity: .18; transition: opacity .2s, r .2s; }
+.playhandle .ph-dot { fill: var(--accent); stroke: var(--bg); stroke-width: 2.5; filter: drop-shadow(0 0 6px var(--accent)); transition: r .2s; }
+.playhandle:hover .ph-halo, .playhandle.dragging .ph-halo { opacity: .32; r: 16px; }
+.playhandle:hover .ph-dot, .playhandle.dragging .ph-dot { r: 9px; }
+.playhead { stroke-width: 2.5; }
+.playhandle:focus { outline: none; }
