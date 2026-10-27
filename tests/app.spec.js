@@ -227,3 +227,41 @@ test.describe("phone", () => {
     expect(b.y).toBeGreaterThan(400);
   });
 });
+
+test.describe("header buttons", () => {
+  test.skip(({ isMobile }) => isMobile, "Fit and the logo label are desktop header controls");
+  test("Fit button zooms the graph back out, and works on the timeline", async ({ page }) => {
+    await open(page);
+    const k = sel => page.evaluate(s => document.querySelector(s).__zoom.k, sel);
+    const zoomIn = async sel => {
+      const start = await k(sel);
+      await page.mouse.move(640, 420);
+      await expect.poll(async () => { await page.mouse.wheel(0, -400); return k(sel); }, { timeout: 15000 }).toBeGreaterThan(start * 1.5);
+      return k(sel);
+    };
+    const zoomed = await zoomIn("#graph");
+    await page.locator("#fit").click();
+    await expect.poll(() => k("#graph"), { timeout: 15000 }).toBeLessThan(zoomed * 0.8);
+    await page.locator('#tabs [data-view="timeline"]').click();
+    await expect(page.locator("body")).toHaveAttribute("data-view", "timeline");
+    await zoomIn("#timeline");
+    await page.locator("#fit").click();
+    await expect.poll(() => k("#timeline"), { timeout: 15000 }).toBeCloseTo(1, 2);
+  });
+  test("Back / Fit / Options sit in the graph row, then in the timeline row", async ({ page }) => {
+    await open(page);
+    await expect(page.locator("#gbar #fit")).toBeVisible();
+    await page.locator('#tabs [data-view="timeline"]').click();
+    await expect(page.locator(".tl-controls #fit")).toBeVisible();
+    await expect(page.locator("#gbar")).toHaveCSS("opacity", "0");
+    await page.setViewportSize({ width: 768, height: 1024 });   // tablet: row must not overflow
+    await page.waitForTimeout(400);
+    expect(await page.evaluate(() => { const c = document.querySelector(".tl-controls"); return c.scrollWidth - c.clientWidth; })).toBeLessThanOrEqual(0);
+  });
+  test("logo goes home", async ({ page }) => {
+    await open(page);
+    await page.locator('#tabs [data-view="timeline"]').click();
+    await page.locator("#brand").click();
+    await expect(page.locator("body")).toHaveAttribute("data-view", "graph");
+  });
+});

@@ -5,7 +5,7 @@ aside .chips span { font-size: 11px; padding: 6px 11px; } aside .label { font-si
 
 /* mid-width: icon-only buttons */
 @media (max-width: 1240px) { .brand span { display: none; } }
-@media (max-width: 1000px) { .btn .lbl { display: none; } .btn { padding: 8px 11px; } }
+@media (max-width: 1120px) { .btn .lbl { display: none; } .btn { padding: 8px 11px; } }
 
 /* phones */
 @media (max-width: 700px) {
@@ -24,8 +24,8 @@ aside .chips span { font-size: 11px; padding: 6px 11px; } aside .label { font-si
   .hint { display: none; }
   .drawer { width: 100%; }
   .tour { top: calc(var(--bar-h) + 8px); bottom: auto; left: 10px; right: 10px; width: auto; }
-  body.panel-open .key { display: none; }
-  .key { right: 10px; bottom: 10px; } .keycard { right: 10px; left: 10px; width: auto; bottom: 62px; }
+  body.panel-open .dock { display: none; }
+  .dock { right: 10px; bottom: 10px; } .keycard { right: 10px; left: 10px; width: auto; bottom: 62px; }
   .msteps { grid-template-columns: 1fr; } .mcard { padding: 22px 18px 18px; }
   .tl-controls { left: 10px; right: 10px; } .tlhelp { left: 10px; right: 10px; width: auto; top: calc(var(--bar-h) + 96px); }
   .tl-list { padding: 6px 12px 80px; top: calc(var(--bar-h) + 52px); }

@@ -37,7 +37,7 @@
     <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 20 L14 7 L22 18 Z" fill="none" stroke="var(--trace)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="14" cy="7" r="4.2" fill="var(--accent)"/><circle cx="7" cy="20" r="3.6" fill="var(--accent-2)"/><circle cx="22" cy="18" r="3.1" fill="var(--ink)"/></svg>
     <span>AI Coding Dictionary</span>
   </a>
-  <div class="tabs" id="tabs" role="tablist"><span class="ink"></span><button data-view="graph" class="active" role="tab" aria-selected="true">Graph</button><button data-view="timeline" role="tab" aria-selected="false">Timeline</button></div>
+  <div class="tabs" id="tabs" role="tablist"><span class="ink"></span><button data-view="graph" class="active" role="tab" aria-selected="true"><svg class="i" aria-hidden="true"><use href="#i-graph"/></svg>Graph</button><button data-view="timeline" role="tab" aria-selected="false"><svg class="i" aria-hidden="true"><use href="#i-time"/></svg>Timeline</button></div>
   <div class="searchbox">
     <input id="search" placeholder="Search terms or ideas…  ( / )" autocomplete="off" spellcheck="false" aria-label="Search terms" role="combobox" aria-expanded="false" aria-controls="results">
     <div class="results" id="results" role="listbox"></div>
@@ -45,8 +45,6 @@
   <div class="grp"><button class="btn" id="browse" aria-label="Browse all terms (B)" title="Browse all terms (B)" aria-expanded="false" aria-controls="drawer"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-menu"/></svg></span><span class="lbl opt">Browse terms</span></button><div class="menuwrap" id="level-wrap"><button class="btn" id="level-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="level-menu" title="Show only beginner, intermediate or advanced terms"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-levels"/></svg></span><span class="lbl" id="level-lbl">Term levels</span></button><div class="menu" id="level-menu"></div></div></div>
   <div class="menuwrap" id="paths-wrap"><button class="btn primary" id="paths-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="paths-menu" title="Guided tours: step-by-step walks through the terms"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-route"/></svg></span><span class="lbl">Guided tours</span></button><div class="menu" id="paths-menu"></div></div>
   <span class="sp"></span>
-  <div class="grp"><button class="btn" id="back" disabled title="Back (⌫)" aria-label="Back"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-back"/></svg></span><span class="lbl opt">Back</span></button><button class="btn" id="fit" title="Show everything (F)" aria-label="Fit"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-fit"/></svg></span><span class="lbl opt">Fit</span></button></div>
-  <span class="sep"></span>
   <div class="grp"><button class="btn theme" id="theme" title="Theme (L)" aria-label="Theme">◐</button></div>
   <div class="grp"><button class="btn" id="help" title="Help and keyboard shortcuts (?)" aria-label="Help"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-help"/></svg></span><span class="lbl">Help</span></button></div>
   </header>
@@ -68,14 +66,15 @@
     <linearGradient id="playGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="pg0"/><stop offset="1" class="pg1"/></linearGradient>
   </defs>
 </svg>
+<div class="viewbar" id="gbar" role="toolbar" aria-label="Graph controls"><div class="dock" id="dock" role="group" aria-label="View controls"><button class="btn" id="back" disabled title="Back (⌫)" aria-label="Back"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-back"/></svg></span><span class="lbl opt">Back</span></button><button class="btn" id="fit" title="Show everything (F)" aria-label="Fit"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-fit"/></svg></span><span class="lbl opt">Fit</span></button><span class="dock-sep" aria-hidden="true"></span><button class="btn" id="key-btn" title="Colours, shapes and display options" aria-haspopup="dialog" aria-expanded="false" aria-controls="keycard"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-options"/></svg></span><span class="lbl" id="key-lbl">Graph options</span></button></div><span class="vb-stats" id="gstats"></span></div>
 <div class="tl-controls">
   <div class="seg" id="tlmode" role="group" aria-label="Timeline layout"><button data-m="lanes" class="on">Lanes</button><button data-m="eras">Eras</button><button data-m="list">List</button></div>
   <span class="playgroup">
-    <button class="btn play" id="play" title="Play history (Space)"><svg class="i" aria-hidden="true"><use href="#i-play"/></svg> Play history</button>
-    <button class="btn stop" id="stop" title="Stop (Esc)"><svg class="i" aria-hidden="true"><use href="#i-stop"/></svg> Stop</button>
+    <button class="btn play" id="play" title="Play history (Space)"><svg class="i" aria-hidden="true"><use href="#i-play"/></svg><span class="lbl">Play history</span></button>
+    <button class="btn stop" id="stop" title="Stop (Esc)" aria-label="Stop"><svg class="i" aria-hidden="true"><use href="#i-stop"/></svg><span class="lbl">Stop</span></button>
     <button class="btn speed" id="speed" title="Playback speed">1×</button>
   </span>
-  <button class="btn" id="tlhelp-btn" title="How to read the timeline"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg> How to read</button>
+  <button class="btn" id="tlhelp-btn" title="How to read the timeline" aria-label="How to read the timeline"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span class="lbl">How to read</span></button>
   <span class="legend"><span><i class="old"></i>built on</span><span><i class="new"></i>led to</span></span>
 </div>
 <div class="tlhelp" id="tlhelp" role="dialog" aria-label="How to read the timeline">
@@ -149,7 +148,7 @@
   <div class="tp" id="tour-p"></div><div class="tn" id="tour-n"></div><div class="tw" id="tour-w"></div><div class="dots" id="tour-d"></div>
   <div class="acts"><button class="btn" id="tour-x">✕ Exit path</button><span class="sp"></span><button class="btn" id="tour-prev">← Back</button><button class="btn primary" id="tour-next">Next →</button></div>
 </div>
-<button class="btn key" id="key-btn" title="Colours, shapes and display options" aria-haspopup="dialog" aria-expanded="false" aria-controls="keycard"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-options"/></svg></span><span class="lbl" id="key-lbl">Graph options</span></button>
+
 <div class="keycard" id="keycard" role="dialog" aria-label="Display options"></div>
 <nav class="tabbar" id="tabbar" aria-label="Main">
   <button data-t="graph"><svg class="i" aria-hidden="true"><use href="#i-graph"/></svg><span>Graph</span></button>

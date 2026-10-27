@@ -17,7 +17,9 @@ const yearLabel = v => { const y = Math.floor(v); return v < 2016 ? String(y) : 
 
 function buttons() {
   const st = state.play;
-  playBtn.innerHTML = st === "playing" ? `<svg class="i" aria-hidden="true"><use href="#i-pause"/></svg> Pause` : st === "paused" ? `<svg class="i" aria-hidden="true"><use href="#i-play"/></svg> Resume` : `<svg class="i" aria-hidden="true"><use href="#i-play"/></svg> Play history`;
+  const [ico, label] = st === "playing" ? ["pause", "Pause"] : st === "paused" ? ["play", "Resume"] : ["play", "Play history"];
+  playBtn.innerHTML = `<svg class="i" aria-hidden="true"><use href="#i-${ico}"/></svg><span class="lbl">${label}</span>`;
+  playBtn.setAttribute("aria-label", label);
   playBtn.title = st === "playing" ? "Pause (Space)" : st === "paused" ? "Resume (Space)" : "Play history (Space)";
   playBtn.classList.toggle("on", st === "playing");
   stopBtn.classList.toggle("show", st !== "idle");

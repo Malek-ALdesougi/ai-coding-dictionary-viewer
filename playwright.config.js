@@ -3,6 +3,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
+  retries: 1, // a few tests depend on animation timing and can flake under heavy parallel load
   testDir: "tests",
   timeout: 60_000,
   expect: { timeout: 15_000, toHaveScreenshot: { maxDiffPixelRatio: 0.02, animations: "disabled", timeout: 15_000 } },

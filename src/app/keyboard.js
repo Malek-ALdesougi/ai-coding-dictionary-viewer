@@ -22,6 +22,9 @@ function escapeStep() {
 }
 
 export function init() {
+  // header buttons that share an action with a shortcut (F, H)
+  $("fit").onclick = () => fitView();
+  $("brand").onclick = e => { e.preventDefault(); goHome(); };
   // chips and in-text term links behave like buttons
   addEventListener("keydown", e => {
     if ((e.key === "Enter" || e.key === " ") && e.target.matches?.('[role="button"][tabindex], a.tlink[tabindex]')) { e.preventDefault(); e.target.click(); }

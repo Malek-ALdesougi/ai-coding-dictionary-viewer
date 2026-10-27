@@ -29,6 +29,7 @@ import * as hash from "./app/hash.js";
 import * as keyboard from "./app/keyboard.js";
 import * as viewport from "./app/viewport.js";
 import { frameSelected, reframe } from "./app/actions.js";
+import { nodes, links, levelCounts } from "./data.js";
 
 set({ theme: initialTheme(), colourBy: initialColour() });
 on(["view", "tlMode"], syncViews);          // visibility first, so everything after measures the right layout
@@ -46,6 +47,10 @@ tours.onTourReframe(frameSelected);
 
 setTlMode(state.tlMode);                     // phones start on Eras
 syncViews();
+// graph toolbar: term / link count, follows the level filter
+const gstats = document.getElementById("gstats");
+const showStats = s => { gstats.textContent = s.level === "all" ? `${nodes.length} terms · ${links.length} links` : `${levelCounts[s.level] || 0} of ${nodes.length} terms · ${s.level}`; };
+on("level", showStats); showStats(state);
 const linked = location.hash.length > 1;
 if (linked) hash.applyLayout();
 graph.whenSettled(() => hash.applyTerm({ initial: true }));

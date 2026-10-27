@@ -24,6 +24,17 @@ function placeMenus() {
     const p = POPOVERS[k];
     if (state.phone) document.body.append(p.el()); else p.home().append(p.el());
   }
+  placeDock();
+}
+
+/** Back · Fit · Options: in the graph's toolbar row or at the end of the timeline's row (desktop/tablet);
+ *  on phones Back moves to the header and the options button floats above the tab bar. */
+function placeDock() {
+  const dock = $("dock");
+  if (state.phone) { $("theme").closest(".grp").before($("back")); document.body.append(dock); return; }
+  dock.prepend($("back"));
+  if (state.view === "timeline") document.querySelector(".tl-controls").append(dock);
+  else $("gbar").prepend(dock);
 }
 
 function sync(s) {
@@ -47,5 +58,6 @@ export function init() {
   sync(state);
   on("popover", sync);
   on("phone", () => { placeMenus(); closePopover(); });
+  on("view", placeDock);
   on(["selected", "drawer"], s => { if (s.popover && (s.selected || s.drawer)) closePopover(); });
 }

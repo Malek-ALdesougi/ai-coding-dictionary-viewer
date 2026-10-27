@@ -1,0 +1,60 @@
+/* ---------- view toolbars ----------
+   Desktop/tablet: each view has its own row under the header.
+   Graph: #gbar (stats … Back · Fit | Graph options). Timeline: the existing .tl-controls row, with the same
+   Back · Fit | Timeline options group at its right end. JS (ui/menus.js placeDock) moves #dock between them.
+   Phones: no rows for the graph; Back sits in the header and the options button floats above the tab bar. */
+.dock { display: flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--border); border-radius: 11px; background: var(--panel); }
+.dock .btn { border: 0; background: transparent; box-shadow: none; min-height: 30px; }
+.dock .btn:hover:not(:disabled), .dock .btn[aria-expanded="true"] { background: var(--raised); }
+.dock-sep { width: 1px; align-self: stretch; margin: 5px 3px; background: var(--border); }
+.viewbar .dock, .tl-controls .dock { position: static; box-shadow: none; flex: none; }
+/* Fit only means something where you can zoom */
+body[data-view="timeline"]:not([data-tlmode="lanes"]) #fit, body[data-view="timeline"]:not([data-tlmode="lanes"]) .dock-sep { display: none; }
+
+.viewbar { display: none; }
+@media (min-width: 701px) {
+  .viewbar { display: flex; position: fixed; left: 0; right: 0; top: var(--bar-h); height: 50px; z-index: 4; align-items: center; gap: 12px; padding: 0 16px;
+    background: var(--panel); border-bottom: 1px solid var(--border); box-shadow: 0 6px 18px var(--shadow); transition: opacity .4s, transform .4s; }
+  body:not([data-view="graph"]) .viewbar { opacity: 0; transform: translateY(-6px); pointer-events: none; }
+  body.panel-open .viewbar { right: min(var(--panel-w), 100%); }
+  .vb-stats { order: -1; font: 11px ui-monospace, Menlo, monospace; letter-spacing: .04em; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tl-controls .dock { margin-left: 4px; }
+  .viewbar .dock { margin-left: auto; }   /* right side, matching the timeline row */
+  /* options card opens under its button */
+  .keycard { top: calc(var(--bar-h) + 58px); bottom: auto; max-height: calc(100vh - var(--bar-h) - 120px); transform: translateY(-6px); }
+  .keycard { right: 16px; left: auto; }
+  body.panel-open .keycard { right: calc(min(var(--panel-w), 100%) + 16px); }
+  /* the levels banner sits under the view rows, not on them */
+  body .lvbanner { top: calc(var(--bar-h) + 60px); }
+}
+/* The rows shrink when the details panel is open, so they adapt to their own width (container queries),
+   dropping the least important bits first: legend → labels → speed. Buttons keep their tooltips. */
+@media (min-width: 701px) {
+  .tl-controls, .viewbar { container-type: inline-size; }
+  .tl-controls > *, .tl-controls .playgroup > * { flex: none; }
+}
+/* the header goes icon-only below 1120px; the view rows keep their labels until their own width runs out */
+@media (max-width: 1120px) and (min-width: 701px) { .viewbar .dock .btn .lbl, .tl-controls .dock .btn .lbl, .tl-controls #tlhelp-btn .lbl, .tl-controls .playgroup .btn .lbl { display: inline; } }
+@container (max-width: 1060px) { .tl-controls .legend { display: none; } .tl-controls .dock { margin-left: auto; } }
+@container (max-width: 860px) { .tl-controls .dock .btn .lbl, .tl-controls #tlhelp-btn .lbl { display: none; } }
+@container (max-width: 640px) { .tl-controls .playgroup .btn .lbl, .tl-controls #speed { display: none; } .tl-controls .btn.play { min-width: 0; } }
+@container (max-width: 520px) { .viewbar .vb-stats { display: none; } }
+@container (max-width: 420px) { .viewbar .dock .btn .lbl { display: none; } }
+
+/* Graph / Timeline switch: same size as the Browse terms / Term levels buttons */
+.tabs { border-radius: 11px; }
+.tabs button { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; padding: 8px 14px; min-height: 34px; }
+.tabs .ink { border-radius: 8px; }
+@media (min-width: 701px) and (max-width: 800px) { .tabs button svg.i { display: none; } .tabs button { padding: 8px 12px; } }
+
+@media (max-width: 700px) {
+  .dock { padding: 0; border: 0; background: none; box-shadow: none; }
+  .dock .btn { border: 1px solid var(--border); background: var(--panel); }
+  .dock-sep, .dock #fit { display: none; }
+}
+/* tablet portrait with the panel open (~300px row): tighten, drop How to read */
+@container (max-width: 400px) {
+  .tl-controls { gap: 6px; padding: 0 8px; } .viewbar { gap: 6px; padding: 0 8px; }
+  .tl-controls #tlhelp-btn, .tl-controls .dock-sep { display: none; }
+  .tl-controls .dock .btn, .tl-controls .btn.play { min-width: 34px; padding: 6px 8px; } .tl-controls .seg button { padding: 8px 8px; }
+}

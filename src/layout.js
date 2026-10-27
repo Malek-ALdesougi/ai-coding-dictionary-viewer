@@ -7,6 +7,8 @@ export const FOOT_H = 44;   // desktop footer bar (keep in sync with --foot-h)
 export const PEEK_H = 128;  // phone sheet height when peeking
 
 export const barH = () => el("toolbar").offsetHeight;
+/** Height of the graph's own toolbar row (desktop/tablet only; hidden on phones). */
+export const viewBarH = () => (isPhone() ? 0 : el("gbar").offsetHeight);
 export const tabH = () => (isPhone() ? el("tabbar").offsetHeight : 0);
 export const panelWidth = () => { const p = el("panel"); return p.classList.contains("open") && !isPhone() ? p.offsetWidth : 0; };
 export const sheetH = () => el("panel").offsetHeight;

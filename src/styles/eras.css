@@ -25,7 +25,7 @@
 .era-b { display: none; padding: 0 10px 4px; border-top: 1px solid var(--border); } .era.open .era-b { display: block; }
 body[data-tlmode="eras"] .tl-controls .playgroup, body[data-tlmode="eras"] .tl-controls .legend, body[data-tlmode="eras"] #tlhelp-btn { display: none; }
 @media (min-width: 701px) { #tlmode [data-m="eras"], .tl-eras { display: none !important; } }
-@media (max-width: 700px) { #tlmode [data-m="lanes"] { display: none; } .lineage { display: block; } body[data-tlmode="list"] #tlhelp-btn { display: none; } body[data-view="timeline"]:not([data-tlmode="lanes"]) .key { display: none; } }
+@media (max-width: 700px) { #tlmode [data-m="lanes"] { display: none; } .lineage { display: block; } body[data-tlmode="list"] #tlhelp-btn { display: none; } body[data-view="timeline"]:not([data-tlmode="lanes"]) .dock { display: none; } }
 
 /* mid widths / short landscape screens: keep the timeline bar from spilling under the details panel */
 @media (min-width: 701px) and (max-width: 1100px) { body.panel-open .tl-controls .legend { display: none; } .tl-controls { overflow: hidden; } }

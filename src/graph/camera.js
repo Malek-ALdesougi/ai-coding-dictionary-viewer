@@ -5,7 +5,7 @@ import { svg, zoom, cam } from "./scene.js";
 import { nodes } from "../data.js";
 import { state } from "../state.js";
 import { motion, isPhone } from "../lib/env.js";
-import { panelWidth, sheetTop, tabH, barH, FOOT_H } from "../layout.js";
+import { panelWidth, sheetTop, tabH, barH, viewBarH, FOOT_H } from "../layout.js";
 
 let onLand = () => {};
 export const onCameraLand = fn => { onLand = fn; };
@@ -27,7 +27,7 @@ svg.on("wheel.cam pointerdown.cam", () => { svg.interrupt("cam"); stop(); });
 /** Fit these terms into the part of the screen the graph can use (beside the panel / above the phone sheet). */
 export function frame(list, maxK = 2.2) {
   const ph = isPhone(), sel = state.selected, pad = ph ? 34 : 70, w = innerWidth - panelWidth();
-  const bottom = ph && sel ? sheetTop() : innerHeight, bar = barH(), foot = ph ? (sel ? 0 : tabH()) : FOOT_H;
+  const bottom = ph && sel ? sheetTop() : innerHeight, bar = barH() + viewBarH(), foot = ph ? (sel ? 0 : tabH()) : FOOT_H;
   const xs = list.map(n => n.x), ys = list.map(n => n.y);
   const [x0, x1, y0, y1] = [min(xs), max(xs), min(ys), max(ys)];
   let k = Math.max(0.3, Math.min(maxK, (w - pad * 2) / Math.max(x1 - x0, 1), (bottom - bar - foot - pad * 2) / Math.max(y1 - y0, 1)));
