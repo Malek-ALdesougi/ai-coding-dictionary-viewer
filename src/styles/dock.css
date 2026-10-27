@@ -19,6 +19,9 @@ body[data-view="timeline"]:not([data-tlmode="lanes"]) #fit, body[data-view="time
   body.panel-open .viewbar { right: min(var(--panel-w), 100%); }
   .vb-stats { order: -1; font: 11px ui-monospace, Menlo, monospace; letter-spacing: .04em; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .tl-controls .dock { margin-left: 4px; }
+  body .tl-controls { right: 0; }   /* full width like the graph row, so both groups line up */
+  /* List mode hides the legend that normally pushes the group right */
+  body:not([data-tlmode="lanes"]) .tl-controls .dock { margin-left: auto; }
   .viewbar .dock { margin-left: auto; }   /* right side, matching the timeline row */
   /* options card opens under its button */
   .keycard { top: calc(var(--bar-h) + 58px); bottom: auto; max-height: calc(100vh - var(--bar-h) - 120px); transform: translateY(-6px); }
