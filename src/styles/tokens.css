@@ -1,0 +1,49 @@
+/* Brand palette. Dark = the palette as specified; light = same hues, lightness inverted,
+   ember/cyan darkened so text stays above 4.5:1 on light surfaces. */
+:root, :root[data-theme="light"] {
+  --foot-h: 44px;
+  color-scheme: light;
+  --bg: #F4F8FC;            /* canvas */
+  --panel: #FFFFFF;         /* card surface */
+  --raised: #E8F0F8;        /* quote banner */
+  --deep: #E6EEF6;          /* treeline: roots band */
+  --ink: #071019;           /* text primary */
+  --muted: #4A6B8A;         /* text dim */
+  --trace: #8FA3BC;         /* muted trace: the // in eyebrows */
+  --rail: #A9BCD0;          /* trace navy: timeline rail */
+  --faint: #C9D6E3;
+  --border: rgba(29, 62, 95, .16);       /* card hairline */
+  --link: rgba(29, 62, 95, .11); --link-hover: rgba(29, 62, 95, .5);
+  --accent: #B34A0B;        /* ember orange: headlines, key stats, today, selected */
+  --accent-2: #0369A1;      /* signal cyan: eyebrows, labels, links, tree nodes */
+  --accent-soft: rgba(179, 74, 11, .10);
+  --on-accent: #FFFFFF;
+  --spark: #FFFFFF;
+  --node-lo: #C3D3E3; --node-hi: #1D3E5F;
+  --shadow: rgba(7, 16, 25, .08);
+  --panel-w: 460px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #071019; --panel: #101D2B; --raised: #16263A; --deep: #050F18;
+    --ink: #EAF2FB; --muted: #8FA3BC; --trace: #4A6B8A; --rail: #1D3E5F; --faint: #1D3E5F;
+    --border: rgba(90, 130, 170, .28);
+    --link: rgba(56, 189, 248, .08); --link-hover: rgba(56, 189, 248, .45);
+    --accent: #FF8A3D; --accent-2: #38BDF8; --accent-soft: rgba(255, 138, 61, .13);
+    --on-accent: #071019; --spark: #EAF2FB;
+    --node-lo: #1D3E5F; --node-hi: #38BDF8;
+    --shadow: rgba(0, 0, 0, .35);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #071019; --panel: #101D2B; --raised: #16263A; --deep: #050F18;
+  --ink: #EAF2FB; --muted: #8FA3BC; --trace: #4A6B8A; --rail: #1D3E5F; --faint: #1D3E5F;
+  --border: rgba(90, 130, 170, .28);
+  --link: rgba(56, 189, 248, .08); --link-hover: rgba(56, 189, 248, .45);
+  --accent: #FF8A3D; --accent-2: #38BDF8; --accent-soft: rgba(255, 138, 61, .13);
+  --on-accent: #071019; --spark: #EAF2FB;
+  --node-lo: #1D3E5F; --node-hi: #38BDF8;
+  --shadow: rgba(0, 0, 0, .35);
+}

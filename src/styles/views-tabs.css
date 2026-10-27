@@ -1,0 +1,11 @@
+/* ---------- views & tabs ---------- */
+.view { position: fixed; inset: 0; transition: opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+.view.off { opacity: 0; transform: scale(.985); pointer-events: none; }
+.tabs { position: relative; display: flex; background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 3px; }
+.tabs button { position: relative; z-index: 1; font: 600 11px ui-monospace, Menlo, monospace; letter-spacing: .08em; text-transform: uppercase;
+  padding: 6px 12px; border: 0; background: none; color: var(--muted); cursor: pointer; transition: color .3s; }
+.tabs button:hover { color: var(--ink); }
+.tabs button.active { color: var(--on-accent); }
+.tabs .ink { position: absolute; top: 3px; bottom: 3px; left: 0; width: 0; border-radius: 7px;
+  background: var(--accent); box-shadow: 0 4px 16px var(--accent-soft);
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), width .45s cubic-bezier(.2,.8,.2,1); }

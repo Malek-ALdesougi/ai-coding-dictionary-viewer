@@ -1,0 +1,11 @@
+/* list view: neutral rail dots; section colour only when "colour by section" is on, and the section is always named */
+.trow::before { background: var(--accent-2); }
+body[data-colour="section"] .trow::before { background: var(--c); }
+.trow.sel::before { background: var(--accent) !important; }
+.trow .rsec { color: var(--ink); opacity: .75; }
+.trow .rsec::before { content: "◆ "; color: var(--muted); }
+body[data-colour="section"] .trow .rsec::before { color: var(--c); }
+.tdots { color: var(--accent); letter-spacing: .2em; margin-right: 6px; }
+@media (min-width: 701px) { #paths-menu { min-width: 440px; } }
+#paths-menu .it-t { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+#paths-menu .cnt { white-space: nowrap; }

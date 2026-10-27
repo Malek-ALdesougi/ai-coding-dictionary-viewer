@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>AI Coding Dictionary</title>
+<meta name="description" content="The AI Coding Dictionary as an interactive graph and timeline, with guided tours for a mixed team.">
+<!-- apply a pinned theme before the first paint (no flash) -->
+<script>try{var t=localStorage.getItem("dict-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-levels" viewBox="0 0 24 24"><path d="M5 20v-8M12 20V4M19 20v-5"/></symbol>
+<symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="5" r="2.2"/><path d="M8 19h6.5a3.5 3.5 0 000-7h-5a3.5 3.5 0 010-7H16"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path class="fill" d="M7 4.5v15l12-7.5z"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path class="fill" d="M6 5h4v14H6zM14 5h4v14h-4z"/></symbol>
+<symbol id="i-stop" viewBox="0 0 24 24"><path class="fill" d="M6 6h12v12H6z"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+<symbol id="i-graph" viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="12" cy="18" r="2.6"/><path d="M8.4 7.4l7 -1M7.4 9.4l3.4 6.6M16.6 8.4l-3.4 7.6"/></symbol>
+<symbol id="i-time" viewBox="0 0 24 24"><path d="M5 4v16"/><path d="M10 7h10M10 13h10M10 19h6"/><circle cx="5" cy="7" r="1.6" class="fill"/><circle cx="5" cy="13" r="1.6" class="fill"/><circle cx="5" cy="19" r="1.6" class="fill"/></symbol>
+<symbol id="i-fit" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.5A8.5 8.5 0 119.5 3.5a7 7 0 0011 11z"/></symbol>
+<symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path class="fill" d="M12 3a9 9 0 000 18z"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 115.1.7c0 1.7-2.6 2-2.6 3.6M12 17.2h.01"/></symbol>
+<symbol id="i-options" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8h.01"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h9"/></symbol>
+</defs></svg>
+
+<header class="toolbar" id="toolbar">
+  <a class="brand" id="brand" href="#" title="Home (H)">
+    <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M7 20 L14 7 L22 18 Z" fill="none" stroke="var(--trace)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="14" cy="7" r="4.2" fill="var(--accent)"/><circle cx="7" cy="20" r="3.6" fill="var(--accent-2)"/><circle cx="22" cy="18" r="3.1" fill="var(--ink)"/></svg>
+    <span>AI Coding Dictionary</span>
+  </a>
+  <div class="tabs" id="tabs" role="tablist"><span class="ink"></span><button data-view="graph" class="active" role="tab" aria-selected="true">Graph</button><button data-view="timeline" role="tab" aria-selected="false">Timeline</button></div>
+  <div class="searchbox">
+    <input id="search" placeholder="Search terms or ideas…  ( / )" autocomplete="off" spellcheck="false" aria-label="Search terms" role="combobox" aria-expanded="false" aria-controls="results">
+    <div class="results" id="results" role="listbox"></div>
+  </div>
+  <div class="grp"><button class="btn" id="browse" aria-label="Browse all terms (B)" title="Browse all terms (B)" aria-expanded="false" aria-controls="drawer"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-menu"/></svg></span><span class="lbl opt">Browse terms</span></button><div class="menuwrap" id="level-wrap"><button class="btn" id="level-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="level-menu" title="Show only beginner, intermediate or advanced terms"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-levels"/></svg></span><span class="lbl" id="level-lbl">Term levels</span></button><div class="menu" id="level-menu"></div></div></div>
+  <div class="menuwrap" id="paths-wrap"><button class="btn primary" id="paths-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="paths-menu" title="Guided tours: step-by-step walks through the terms"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-route"/></svg></span><span class="lbl">Guided tours</span></button><div class="menu" id="paths-menu"></div></div>
+  <span class="sp"></span>
+  <div class="grp"><button class="btn" id="back" disabled title="Back (⌫)" aria-label="Back"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-back"/></svg></span><span class="lbl opt">Back</span></button><button class="btn" id="fit" title="Show everything (F)" aria-label="Fit"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-fit"/></svg></span><span class="lbl opt">Fit</span></button></div>
+  <span class="sep"></span>
+  <div class="grp"><button class="btn theme" id="theme" title="Theme (L)" aria-label="Theme">◐</button></div>
+  <div class="grp"><button class="btn" id="help" title="Help and keyboard shortcuts (?)" aria-label="Help"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-help"/></svg></span><span class="lbl">Help</span></button></div>
+  </header>
+<footer class="footbar" id="footbar"><div class="hint" id="hint"></div></footer>
+<div class="tip" id="tip"></div>
+<svg id="graph" class="view">
+  <defs>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="sparkGlow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="b"/>
+      <feFlood id="sparkColor" flood-color="#FF8A3D"/><feComposite in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+</svg>
+<svg id="timeline" class="view off">
+  <defs>
+    <clipPath id="tlClip"><rect id="tlClipRect"></rect></clipPath>
+    <linearGradient id="playGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="pg0"/><stop offset="1" class="pg1"/></linearGradient>
+  </defs>
+</svg>
+<div class="tl-controls">
+  <div class="seg" id="tlmode" role="group" aria-label="Timeline layout"><button data-m="lanes" class="on">Lanes</button><button data-m="eras">Eras</button><button data-m="list">List</button></div>
+  <span class="playgroup">
+    <button class="btn play" id="play" title="Play history (Space)"><svg class="i" aria-hidden="true"><use href="#i-play"/></svg> Play history</button>
+    <button class="btn stop" id="stop" title="Stop (Esc)"><svg class="i" aria-hidden="true"><use href="#i-stop"/></svg> Stop</button>
+    <button class="btn speed" id="speed" title="Playback speed">1×</button>
+  </span>
+  <button class="btn" id="tlhelp-btn" title="How to read the timeline"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg> How to read</button>
+  <span class="legend"><span><i class="old"></i>built on</span><span><i class="new"></i>led to</span></span>
+</div>
+<div class="tlhelp" id="tlhelp" role="dialog" aria-label="How to read the timeline">
+  <div class="hh"><span>// How to read this</span><button class="close-x" id="tlhelp-x" aria-label="Close">×</button></div>
+  <ul>
+    <li><b>Each dot</b> is a term, placed on the date it entered AI coding or went viral.</li>
+    <li><b>Each row</b> is one of the dictionary's seven sections.</li>
+    <li><b>Click a dot</b> to trace where it came from. Lines run from older ideas (left) to the newer ones built on them (right).</li>
+    <li><b>The pale strip on the left</b> squeezes everything before 2017 together, so the busy recent years get most of the room.</li>
+    <li><b>Play history</b> (Space) replays the story from the start. <b>List</b> shows the same thing as a plain dated list.</li>
+  </ul>
+</div>
+<div class="tl-list" id="tl-list" aria-label="Terms by date"></div>
+<div class="tl-list tl-eras" id="tl-eras" aria-label="Terms by era"></div>
+<div class="watermark" id="watermark"></div>
+<div class="resizer" id="resizer" role="separator" aria-orientation="vertical" aria-label="Resize details panel" tabindex="0" title="Drag to make wider · double-click to reset"><span class="grip"><i></i><i></i><i></i></span><span class="wbadge" id="wbadge"></span></div>
+<aside id="panel" aria-label="Term details">
+  <div class="grab" id="grab" aria-hidden="true"><i></i></div>
+  <button class="close" aria-label="Close">×</button>
+  <div class="content" id="content">
+    <div class="p-head" id="p-head">
+      <div class="p-top"><div class="eyebrow" id="p-meta"></div><span class="lvbadge" id="p-level"></span></div>
+      <h2 id="p-title"></h2>
+    </div>
+    <div class="plainbox" id="p-plainbox"><div class="label">In plain English</div><p id="p-plain"></p></div>
+    <div class="lineage" id="p-lineage" hidden></div>
+    <p class="desc" id="p-desc"></p>
+    <button class="btn copy" id="copy-link"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg> Copy link to this term</button>
+    <div class="history" id="p-history"></div>
+    <div class="body" id="p-body"></div>
+    <div class="label" id="l-out">Links to</div><div class="chips" id="p-out"></div>
+    <div class="label" id="l-in">Linked from</div><div class="chips" id="p-in"></div>
+  </div>
+</aside>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="m-title">
+  <div class="mcard">
+    <button class="close-x x" id="m-x" aria-label="Close">×</button>
+    <h2 id="m-title">How this works</h2>
+    <p class="lead"><span id="m-count">71</span> plain-English terms for talking about AI coding, shown as a map. You can read them in any order.</p>
+    <div class="msteps">
+      <div class="mstep">
+        <svg viewBox="0 0 160 62" aria-hidden="true"><circle class="pd" cx="34" cy="34" r="9" fill="var(--sec1)"/><circle class="pd" cx="80" cy="22" r="14" fill="var(--sec2)"/><circle class="pd" cx="124" cy="38" r="7" fill="var(--sec4)"/><circle class="pd" cx="104" cy="14" r="5" fill="var(--sec3)"/></svg>
+        <b>Every dot is a term</b><p>Bigger dots connect to more terms. Darker dots have the most links.</p>
+      </div>
+      <div class="mstep">
+        <svg viewBox="0 0 160 62" aria-hidden="true"><path class="dl" d="M30 40 Q60 6 82 24 T130 34" fill="none" stroke="var(--accent-2)" stroke-width="2"/><circle cx="30" cy="40" r="8" fill="var(--sec1)"/><circle cx="82" cy="24" r="10" fill="var(--accent)"/><circle cx="130" cy="34" r="7" fill="var(--sec3)"/></svg>
+        <b>Lines show connections</b><p>Hover a dot for a quick definition. Click it and its connections light up.</p>
+      </div>
+      <div class="mstep">
+        <svg viewBox="0 0 160 62" aria-hidden="true"><rect x="8" y="8" width="84" height="46" rx="6" fill="none" stroke="var(--border)"/><circle cx="40" cy="31" r="8" fill="var(--accent)"/><g class="sl"><rect x="104" y="8" width="48" height="46" rx="6" fill="var(--raised)" stroke="var(--accent-2)"/><rect x="112" y="18" width="32" height="4" rx="2" fill="var(--accent)"/><rect x="112" y="28" width="30" height="3" rx="1.5" fill="var(--muted)"/><rect x="112" y="35" width="24" height="3" rx="1.5" fill="var(--muted)"/></g></svg>
+        <b>Read on the right</b><p>A one-line summary, the full entry, and where the idea came from. Try the <b class="inline">Timeline</b> tab for when it appeared.</p>
+      </div>
+    </div>
+    <div class="mh">Where would you like to start?</div>
+    <div class="mroles" id="m-roles"></div>
+    <details class="mkeys-wrap"><summary class="mh">Keyboard shortcuts</summary>
+      <div class="mkeys">
+        <div><kbd>/</kbd>Search</div><div><kbd>B</kbd>Browse all terms</div><div><kbd>T</kbd>Timeline</div><div><kbd>G</kbd>Graph</div>
+        <div><kbd>F</kbd>Fit everything</div><div><kbd>H</kbd>Home / reset</div><div><kbd>L</kbd>Change theme</div><div><kbd>Space</kbd>Play / pause history</div>
+        <div><kbd>←</kbd><kbd>→</kbd>Step through a path</div><div><kbd>Esc</kbd>Close / stop</div><div><kbd>⌫</kbd>Previous term</div><div><kbd>?</kbd>This help</div>
+      </div>
+    </details>
+    <div class="mfoot">
+      <span>Definitions come from the AI Coding Dictionary by Matt Pocock — <a href="https://www.aihero.dev/ai-coding-dictionary" target="_blank" rel="noopener">website ↗</a> · <a href="https://github.com/mattpocock/dictionary-of-ai-coding" target="_blank" rel="noopener">GitHub ↗</a></span>
+      <button class="btn primary" id="m-close">Explore on my own</button>
+    </div>
+  </div>
+</div>
+<aside class="drawer" id="drawer" aria-label="Browse terms"></aside>
+<div class="tour" id="tour" role="region" aria-label="Guided tour">
+  <div class="tp" id="tour-p"></div><div class="tn" id="tour-n"></div><div class="tw" id="tour-w"></div><div class="dots" id="tour-d"></div>
+  <div class="acts"><button class="btn" id="tour-x">✕ Exit path</button><span class="sp"></span><button class="btn" id="tour-prev">← Back</button><button class="btn primary" id="tour-next">Next →</button></div>
+</div>
+<button class="btn key" id="key-btn" title="Colours, shapes and display options" aria-haspopup="dialog" aria-expanded="false" aria-controls="keycard"><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-options"/></svg></span><span class="lbl" id="key-lbl">Graph options</span></button>
+<div class="keycard" id="keycard" role="dialog" aria-label="Display options"></div>
+<nav class="tabbar" id="tabbar" aria-label="Main">
+  <button data-t="graph"><svg class="i" aria-hidden="true"><use href="#i-graph"/></svg><span>Graph</span></button>
+  <button data-t="timeline"><svg class="i" aria-hidden="true"><use href="#i-time"/></svg><span>Timeline</span></button>
+  <button data-t="browse"><svg class="i" aria-hidden="true"><use href="#i-menu"/></svg><span>Browse</span></button>
+  <button data-t="tours"><svg class="i" aria-hidden="true"><use href="#i-route"/></svg><span>Tours</span></button>
+  <button data-t="levels"><svg class="i" aria-hidden="true"><use href="#i-levels"/></svg><span>Levels</span><i class="dot"></i></button>
+</nav>
+<button class="btn fab" id="fab-fit" aria-label="Show everything" title="Show everything"><svg class="i" aria-hidden="true"><use href="#i-fit"/></svg><span>Show all</span></button>
+<div class="lvbanner" id="lvbanner" role="status"><span id="lvb-t"></span><button class="btn" id="lvb-x">Show all</button></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

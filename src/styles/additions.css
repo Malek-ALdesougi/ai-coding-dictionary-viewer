@@ -1,0 +1,9 @@
+/* additions for the module version */
+[hidden] { display: none !important; }
+aside .chips .none { cursor: default; opacity: .5; animation: none; }
+.tip .tl-ev { color: var(--accent); }
+.mcard b.inline { display: inline; margin: 0; text-transform: none; letter-spacing: 0; }
+.mkeys-wrap { margin-top: 6px; } .mkeys-wrap summary.mh { cursor: pointer; display: list-item; margin-top: 20px; }
+.menu > .dr-label:first-child { margin-top: 8px; }
+.kline.glow { border-top-color: var(--accent); opacity: 1; } .kline.arc { border-top-color: var(--accent-2); opacity: 1; }
+.krow.ksp { margin-top: 8px; }

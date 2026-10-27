@@ -1,0 +1,27 @@
+
+.link { fill: none; stroke: var(--link); stroke-width: 1; transition: opacity .35s, stroke .25s; }
+.link.hover { stroke: var(--link-hover); }
+.glow-line { fill: none; stroke-linecap: round; }
+.s-acc { stop-color: var(--accent); } .s-acc2 { stop-color: var(--accent-2); }
+.glow-line.halo { stroke-width: 5; opacity: .35; filter: url(#blur); }
+.glow-line.core { stroke-width: 1.6; }
+.spark { fill: var(--spark); filter: url(#sparkGlow); pointer-events: none; }
+.ripple { fill: none; stroke: var(--accent); pointer-events: none; }
+
+.node circle.dot { stroke: var(--bg); stroke-width: 1.5; cursor: pointer;
+  transition: opacity .35s, stroke .3s, stroke-width .3s; }
+.node.related circle.dot { stroke: var(--accent); stroke-width: 2; }
+.node.selected circle.dot { stroke: var(--accent); stroke-width: 3; }
+.node.hover circle.dot { stroke: var(--ink); stroke-width: 2; }
+.node text { font: 500 8.5px ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: .08em;
+  text-transform: uppercase; fill: var(--muted); pointer-events: none; transition: opacity .35s, fill .3s;
+  paint-order: stroke; stroke: var(--bg); stroke-width: 3px; stroke-linejoin: round; }
+.node.related text, .node.hover text { fill: var(--ink); font-weight: 700; }
+.node.selected text { fill: var(--accent); font-weight: 800; font-size: 12px !important; stroke-width: 5px; }
+.dim { opacity: .12; }
+.node { transition: opacity .7s ease; }
+.link { transition: opacity .7s ease, stroke .25s; }
+.glow-line.halo { transition: opacity .7s ease; }
+/* while the camera glides, drop the expensive blur glow and sparks; they fade back in once it lands */
+body.cam .glow-line.halo { opacity: 0; }
+body.cam .spark { visibility: hidden; }

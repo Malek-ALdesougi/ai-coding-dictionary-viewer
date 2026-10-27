@@ -1,0 +1,503 @@
+{
+  "terms": {
+    "AFK": {
+      "level": "intermediate",
+      "plain": "You start the AI working, then walk away and let it run on its own."
+    },
+    "AGENTS.md": {
+      "level": "intermediate",
+      "plain": "A readme file for the AI: instructions it reads at the start of every session."
+    },
+    "AI": {
+      "level": "beginner",
+      "plain": "A label for whatever computers can newly do that seems smart. Today that mostly means chatbots built on large language models."
+    },
+    "AX": {
+      "level": "intermediate",
+      "plain": "How easy your project makes life for an AI agent, like developer experience but for the AI."
+    },
+    "Agent mode": {
+      "level": "intermediate",
+      "plain": "A preset that sets how freely the AI may act and how it should behave. It can be switched mid-session."
+    },
+    "Agent": {
+      "level": "beginner",
+      "plain": "An AI model plus tools and instructions, working through a task with you turn by turn."
+    },
+    "Attention budget": {
+      "level": "advanced",
+      "plain": "The AI can only give so much focus to everything it reads, and that amount doesn't grow when the text gets longer."
+    },
+    "Attention degradation": {
+      "level": "advanced",
+      "plain": "The longer the conversation gets, the thinner the AI's focus is spread, so it misses more."
+    },
+    "Attention relationship": {
+      "level": "advanced",
+      "plain": "How strongly two pieces of text influence each other when the AI reads them."
+    },
+    "Autocompact": {
+      "level": "intermediate",
+      "plain": "The tool automatically summarises the conversation when it is nearly full."
+    },
+    "Automated check": {
+      "level": "intermediate",
+      "plain": "Tests, type checks and linters that pass or fail on their own, with no judgement involved."
+    },
+    "Automated review": {
+      "level": "intermediate",
+      "plain": "A second AI reads the first AI's work and gives its opinion."
+    },
+    "Cache tokens": {
+      "level": "advanced",
+      "plain": "Text the provider remembers from your last request, so resending it costs much less."
+    },
+    "Clearing": {
+      "level": "intermediate",
+      "plain": "Wipe the conversation and start again with a blank slate."
+    },
+    "Compaction": {
+      "level": "intermediate",
+      "plain": "Summarise the conversation so far and carry the summary into a fresh one. You lose some detail to free up space."
+    },
+    "Context pointer": {
+      "level": "intermediate",
+      "plain": "A note that tells the AI where to find more information, so it only reads it when needed."
+    },
+    "Context window": {
+      "level": "beginner",
+      "plain": "Everything the AI can see at once. It has a fixed size."
+    },
+    "Context": {
+      "level": "beginner",
+      "plain": "The information the AI has in front of it that matters for the task right now."
+    },
+    "Contextual knowledge": {
+      "level": "intermediate",
+      "plain": "Facts the AI can read directly in the conversation, as opposed to what it learned in training."
+    },
+    "DX": {
+      "level": "intermediate",
+      "plain": "How easy a codebase and its tools make good work for human developers."
+    },
+    "Dark factory": {
+      "level": "advanced",
+      "plain": "Code written by automated agents that no human ever reviews."
+    },
+    "Design concept": {
+      "level": "intermediate",
+      "plain": "The shared idea of what you are building that you and the AI both hold in your heads."
+    },
+    "Effort": {
+      "level": "intermediate",
+      "plain": "A dial for how long the AI thinks before answering. More thinking helps with hard problems but costs more."
+    },
+    "Environment": {
+      "level": "intermediate",
+      "plain": "Everything the agent works on and can change: your files, tools and systems."
+    },
+    "Filesystem": {
+      "level": "intermediate",
+      "plain": "The folders and files the agent can read, write and run."
+    },
+    "Grilling": {
+      "level": "intermediate",
+      "plain": "The AI asks you questions one at a time until a plan is clear."
+    },
+    "Hallucination": {
+      "level": "beginner",
+      "plain": "The AI states something wrong with confidence: an invented fact, or ignoring what you gave it."
+    },
+    "Handoff artifact": {
+      "level": "intermediate",
+      "plain": "A document written by one session so the next one can pick up the work."
+    },
+    "Handoff": {
+      "level": "intermediate",
+      "plain": "Passing work from one AI session to another, with no going back."
+    },
+    "Harness": {
+      "level": "beginner",
+      "plain": "The software around the model (tools, instructions, permissions) that turns it into an agent."
+    },
+    "Human review": {
+      "level": "beginner",
+      "plain": "A person reads the code the AI wrote and judges it."
+    },
+    "Human-in-the-loop": {
+      "level": "beginner",
+      "plain": "A person works alongside the AI during the session, checking and steering as it goes."
+    },
+    "Inference": {
+      "level": "beginner",
+      "plain": "The AI generating an answer from what it already learned. It doesn't learn anything new while doing so."
+    },
+    "Input tokens": {
+      "level": "intermediate",
+      "plain": "The text you send to the AI with each request. It costs less than the text the AI writes back."
+    },
+    "Knowledge cutoff": {
+      "level": "beginner",
+      "plain": "The date after which the AI learned nothing, so newer tools and libraries may be unknown to it."
+    },
+    "MCP": {
+      "level": "intermediate",
+      "plain": "A standard way to plug extra tools and data sources into an AI app."
+    },
+    "Memory system": {
+      "level": "intermediate",
+      "plain": "A way to save notes between sessions so the AI can recall them next time."
+    },
+    "Model provider request": {
+      "level": "intermediate",
+      "plain": "One message from your tool to the AI company, and the answer coming back."
+    },
+    "Model provider": {
+      "level": "intermediate",
+      "plain": "The company or software that runs the AI model for you."
+    },
+    "Model": {
+      "level": "beginner",
+      "plain": "The trained AI itself. It predicts text and does nothing else on its own."
+    },
+    "Next-token prediction": {
+      "level": "intermediate",
+      "plain": "What the AI actually does: pick the next small chunk of text, then repeat."
+    },
+    "Non-determinism": {
+      "level": "intermediate",
+      "plain": "Ask the same question twice and you may get different answers."
+    },
+    "Output tokens": {
+      "level": "intermediate",
+      "plain": "The text the AI writes back. It costs more than the text you send."
+    },
+    "Parameters": {
+      "level": "beginner",
+      "plain": "The billions of numbers inside a model that hold everything it learned."
+    },
+    "Parametric knowledge": {
+      "level": "intermediate",
+      "plain": "What the AI learned in training and stored in its parameters. It stops at training time."
+    },
+    "Permission mode": {
+      "level": "intermediate",
+      "plain": "The setting that decides which actions the AI can take without asking you."
+    },
+    "Permission request": {
+      "level": "intermediate",
+      "plain": "The prompt that asks you to approve something before the AI does it."
+    },
+    "Prefix cache": {
+      "level": "advanced",
+      "plain": "The provider reuses its work on the start of a request that hasn't changed, which saves time and money."
+    },
+    "Primary source": {
+      "level": "intermediate",
+      "plain": "The original thing itself: the code, the transcript, the raw data."
+    },
+    "Progressive disclosure": {
+      "level": "intermediate",
+      "plain": "Give the AI only what it needs now, with pointers to the rest."
+    },
+    "Prototyping": {
+      "level": "intermediate",
+      "plain": "Ask the AI for a quick rough version so you have something real to react to."
+    },
+    "Sandbox": {
+      "level": "beginner",
+      "plain": "A walled-off space where the AI can run without harming the rest of your computer."
+    },
+    "Secondary source": {
+      "level": "intermediate",
+      "plain": "A summary or account of the original: quick to read but missing detail."
+    },
+    "Session": {
+      "level": "beginner",
+      "plain": "One run of work with an AI, from a blank start until you clear or close it."
+    },
+    "Skill": {
+      "level": "intermediate",
+      "plain": "A packaged set of instructions the AI loads only when a task calls for it."
+    },
+    "Smart zone": {
+      "level": "intermediate",
+      "plain": "Early in a session the AI is sharp. As the session fills up it gets sloppier and more forgetful."
+    },
+    "Software factory": {
+      "level": "advanced",
+      "plain": "A setup where triggers, not people, start AI sessions so more work runs on its own."
+    },
+    "Spec": {
+      "level": "intermediate",
+      "plain": "A written description of a larger piece of work, split into tickets for several sessions."
+    },
+    "Stateful": {
+      "level": "intermediate",
+      "plain": "Remembers what happened before."
+    },
+    "Stateless": {
+      "level": "intermediate",
+      "plain": "Remembers nothing between requests unless you send it again."
+    },
+    "Subagent": {
+      "level": "intermediate",
+      "plain": "A helper agent that another agent starts for a side task and that reports back with a single answer."
+    },
+    "Sycophancy": {
+      "level": "beginner",
+      "plain": "The AI agrees with you too readily, because training rewarded answers people liked."
+    },
+    "System prompt": {
+      "level": "beginner",
+      "plain": "The standing instructions sent to the AI at the start of every request."
+    },
+    "Ticket": {
+      "level": "intermediate",
+      "plain": "A single task written up for one session, possibly part of a larger spec."
+    },
+    "Token": {
+      "level": "beginner",
+      "plain": "A small chunk of text, roughly a word, that the AI reads and writes. Costs and limits are counted in tokens."
+    },
+    "Tool call": {
+      "level": "intermediate",
+      "plain": "The AI asking, in plain text, to use a tool. The software around it does the actual running."
+    },
+    "Tool result": {
+      "level": "intermediate",
+      "plain": "What comes back after a tool runs: file contents, output or an error."
+    },
+    "Tool": {
+      "level": "beginner",
+      "plain": "An action the agent can take, like reading a file or running a command."
+    },
+    "Training": {
+      "level": "beginner",
+      "plain": "Teaching the model by showing it huge amounts of text until it predicts well."
+    },
+    "Turn": {
+      "level": "beginner",
+      "plain": "One message from you plus everything the AI does before it hands control back."
+    },
+    "Vibe coding": {
+      "level": "beginner",
+      "plain": "Accepting the AI's code without reading it."
+    }
+  },
+  "paths": [
+    {
+      "id": "start",
+      "name": "Foundations",
+      "audience": "Never used AI coding tools",
+      "blurb": "Seven terms, in order. Enough to follow most conversations about AI coding.",
+      "steps": [
+        {
+          "term": "AI",
+          "why": "The big label. Today it mostly means chatbots built on large language models."
+        },
+        {
+          "term": "Model",
+          "why": "The thing that actually writes text. By itself it can't do anything else."
+        },
+        {
+          "term": "Token",
+          "why": "The unit the model reads and writes. Costs and limits are counted in these."
+        },
+        {
+          "term": "Context window",
+          "why": "Everything the model can see at once, with a fixed size."
+        },
+        {
+          "term": "Session",
+          "why": "One run of work. Start fresh and it remembers nothing from the last one."
+        },
+        {
+          "term": "Agent",
+          "why": "A model plus tools, working through a task with you."
+        },
+        {
+          "term": "Hallucination",
+          "why": "The most common way an agent goes wrong. Worth knowing before you trust one."
+        }
+      ],
+      "level": "beginner"
+    },
+    {
+      "id": "pm",
+      "name": "Plan and manage AI work",
+      "audience": "Product & project managers",
+      "blurb": "The terms that shape what you can plan for and how to manage the risk.",
+      "steps": [
+        {
+          "term": "Agent",
+          "why": "What you are actually delegating work to."
+        },
+        {
+          "term": "Session",
+          "why": "The unit of work. Big tasks have to be split across several."
+        },
+        {
+          "term": "Context window",
+          "why": "Why long tasks degrade and need to be split."
+        },
+        {
+          "term": "Hallucination",
+          "why": "What can go wrong, and why someone has to check."
+        },
+        {
+          "term": "Human review",
+          "why": "Whether a person reads the output, which is the main risk decision."
+        },
+        {
+          "term": "Vibe coding",
+          "why": "The no-review end of that decision."
+        },
+        {
+          "term": "Spec",
+          "why": "How a big piece of work is described for the AI."
+        },
+        {
+          "term": "Ticket",
+          "why": "How the spec is cut into session-sized tasks."
+        },
+        {
+          "term": "AFK",
+          "why": "Letting the agent run unattended."
+        },
+        {
+          "term": "Software factory",
+          "why": "Where this goes at scale: triggers start the work, not people."
+        }
+      ],
+      "level": "beginner"
+    },
+    {
+      "id": "design",
+      "name": "Shape and judge the result",
+      "audience": "Designers & researchers",
+      "blurb": "The terms about agreeing on what to build, and trusting what comes back.",
+      "steps": [
+        {
+          "term": "Agent",
+          "why": "Who you are working with."
+        },
+        {
+          "term": "Context",
+          "why": "What the AI knows about your task right now. Your brief goes here."
+        },
+        {
+          "term": "Design concept",
+          "why": "The shared idea of what's being built, held by you and the agent."
+        },
+        {
+          "term": "Grilling",
+          "why": "A way to get that idea out of your head, one question at a time."
+        },
+        {
+          "term": "Prototyping",
+          "why": "Skip the long discussion and get a rough version to react to."
+        },
+        {
+          "term": "Hallucination",
+          "why": "Confident wrong answers, including invented facts."
+        },
+        {
+          "term": "Sycophancy",
+          "why": "Why the AI tends to agree with you and what to do about it."
+        }
+      ],
+      "level": "beginner"
+    },
+    {
+      "id": "eng",
+      "name": "Build with coding agents",
+      "audience": "Engineers",
+      "blurb": "The moving parts under the hood, and how to keep an agent effective.",
+      "steps": [
+        {
+          "term": "Harness",
+          "why": "Everything around the model that makes it an agent."
+        },
+        {
+          "term": "Tool call",
+          "why": "How the model asks to do something. The harness runs it."
+        },
+        {
+          "term": "MCP",
+          "why": "A standard way to plug in more tools."
+        },
+        {
+          "term": "Context window",
+          "why": "The fixed budget everything competes for."
+        },
+        {
+          "term": "Attention degradation",
+          "why": "Why quality drops as the session grows."
+        },
+        {
+          "term": "Compaction",
+          "why": "Summarise and continue, at the cost of detail."
+        },
+        {
+          "term": "AGENTS.md",
+          "why": "Standing instructions loaded at the start of each session."
+        },
+        {
+          "term": "Skill",
+          "why": "Instructions loaded only when needed."
+        },
+        {
+          "term": "Subagent",
+          "why": "Hand a side task to a helper with its own context."
+        },
+        {
+          "term": "Automated check",
+          "why": "Tests and linters that catch mistakes without judgement."
+        },
+        {
+          "term": "Sandbox",
+          "why": "Limit what the agent can touch."
+        }
+      ],
+      "level": "intermediate"
+    },
+    {
+      "id": "cost",
+      "name": "Understand the bill",
+      "audience": "Anyone looking at AI costs",
+      "blurb": "How usage turns into cost, and the levers that change it.",
+      "steps": [
+        {
+          "term": "Token",
+          "why": "Everything is counted and billed in tokens."
+        },
+        {
+          "term": "Input tokens",
+          "why": "What you send, re-sent with every request."
+        },
+        {
+          "term": "Output tokens",
+          "why": "What the model writes. It costs more per token than input."
+        },
+        {
+          "term": "Context window",
+          "why": "A longer conversation means more input on every request."
+        },
+        {
+          "term": "Prefix cache",
+          "why": "Reuses the unchanged start of a request to save work."
+        },
+        {
+          "term": "Cache tokens",
+          "why": "The cheaper rate those reused tokens are billed at."
+        },
+        {
+          "term": "Effort",
+          "why": "More thinking before answering means more output tokens."
+        }
+      ],
+      "level": "intermediate"
+    }
+  ]
+}

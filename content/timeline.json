@@ -1,0 +1,1539 @@
+{
+  "AI": {
+    "id": "AI",
+    "date": "2022-11",
+    "label": "Nov 2022",
+    "event": "popularised",
+    "headline": "ChatGPT launches and \"AI\" comes to mean large language models",
+    "story": "OpenAI released ChatGPT on 30 November 2022 as a free research preview of a model tuned for dialogue. It put a general-purpose language model in front of millions of people, and in everyday use \"AI\" quickly came to mean chat-based LLMs. The field itself is much older; this was the moment the word took on its current coding-assistant meaning.",
+    "roots": "Term coined in the Dartmouth Summer Research Project proposal by McCarthy, Minsky, Rochester and Shannon, dated 31 Aug 1955",
+    "from": [],
+    "sources": [
+      {
+        "title": "OpenAI: Introducing ChatGPT",
+        "url": "https://openai.com/index/chatgpt/"
+      },
+      {
+        "title": "A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence (1955)",
+        "url": "http://jmc.stanford.edu/articles/dartmouth/dartmouth.pdf"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Parameters": {
+    "id": "Parameters",
+    "date": "2020-05",
+    "label": "May 2020",
+    "event": "popularised",
+    "headline": "GPT-3 paper makes \"175 billion parameters\" a headline number",
+    "story": "The GPT-3 paper, \"Language Models are Few-Shot Learners\", was posted on 28 May 2020 and described a 175-billion-parameter model. Parameter count became the shorthand people used to compare model size and capability. Parameters are the adjustable weights set during training, an idea that goes back to early neural networks.",
+    "roots": "Adjustable weights date to Rosenblatt's perceptron (1958)",
+    "from": [],
+    "sources": [
+      {
+        "title": "Language Models are Few-Shot Learners (arXiv 2005.14165)",
+        "url": "https://arxiv.org/abs/2005.14165"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Training": {
+    "id": "Training",
+    "date": "1986-10",
+    "label": "Oct 1986",
+    "event": "formalised",
+    "headline": "Backpropagation paper makes training multi-layer networks practical",
+    "story": "Rumelhart, Hinton and Williams published \"Learning representations by back-propagating errors\" in Nature in October 1986. It showed how to adjust the weights of a multi-layer network efficiently from examples, which is the core of how models are still trained. Earlier networks had parameters but no practical way to set them across many layers.",
+    "from": [],
+    "sources": [
+      {
+        "title": "Learning representations by back-propagating errors (Nature 323, 533-536)",
+        "url": "https://www.nature.com/articles/323533a0",
+        "unverified": true
+      }
+    ],
+    "confidence": "high"
+  },
+  "Token": {
+    "id": "Token",
+    "date": "2015-08",
+    "label": "Aug 2015",
+    "event": "formalised",
+    "headline": "Byte-pair encoding applied to split text into subword tokens",
+    "story": "Sennrich, Haddow and Birch posted \"Neural Machine Translation of Rare Words with Subword Units\" on 31 August 2015, adapting byte-pair encoding to break words into reusable pieces. This let models handle rare and unseen words with a fixed vocabulary. Subword tokens later became the unit that model APIs count for context limits and billing.",
+    "from": [],
+    "sources": [
+      {
+        "title": "Neural Machine Translation of Rare Words with Subword Units (arXiv 1508.07909)",
+        "url": "https://arxiv.org/abs/1508.07909"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Next-token prediction": {
+    "id": "Next-token prediction",
+    "date": "2018-06",
+    "label": "Jun 2018",
+    "event": "formalised",
+    "headline": "OpenAI's GPT pretrains a transformer on next-token prediction",
+    "story": "On 11 June 2018 OpenAI described generative pre-training: train a transformer to predict the next token on a large unlabelled corpus, then fine-tune it for specific tasks. It showed that this simple objective produces broadly useful language representations. Later GPT models kept the same objective and scaled it up.",
+    "roots": "Shannon studied predicting the next letter of English text in \"Prediction and Entropy of Printed English\" (1951)",
+    "from": [
+      "Token"
+    ],
+    "sources": [
+      {
+        "title": "OpenAI: Improving language understanding with unsupervised learning",
+        "url": "https://openai.com/index/language-unsupervised/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Model": {
+    "id": "Model",
+    "date": "2020-05",
+    "label": "May 2020",
+    "event": "popularised",
+    "headline": "GPT-3 shows one pretrained model can do many tasks from a prompt",
+    "story": "The GPT-3 paper showed that a single large pretrained language model could perform many tasks from instructions and examples in the prompt, without task-specific fine-tuning. This made \"the model\" a general-purpose component that software calls, instead of a system built for one task. It combined the next-token objective of earlier GPT models with much larger training and parameter counts.",
+    "roots": "OpenAI's first GPT model (June 2018) established the pretrained-transformer approach",
+    "from": [
+      "Parameters",
+      "Training",
+      "Next-token prediction"
+    ],
+    "sources": [
+      {
+        "title": "Language Models are Few-Shot Learners (arXiv 2005.14165)",
+        "url": "https://arxiv.org/abs/2005.14165"
+      },
+      {
+        "title": "OpenAI: Improving language understanding with unsupervised learning",
+        "url": "https://openai.com/index/language-unsupervised/"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Inference": {
+    "id": "Inference",
+    "date": "2016-07",
+    "label": "Jul 2016",
+    "event": "popularised",
+    "headline": "NVIDIA explainer popularises the training vs inference split",
+    "story": "An NVIDIA blog post by Kyle Aubrey on 29 July 2016 explained the difference between training a deep learning model and running it to make predictions (inference). The distinction mattered because the two workloads need different hardware and cost profiles. Today every call to a hosted model is an inference request on an already-trained model.",
+    "from": [
+      "Training"
+    ],
+    "sources": [
+      {
+        "title": "NVIDIA Blog: What's the Difference Between Deep Learning Training and Inference?",
+        "url": "https://blogs.nvidia.com/blog/difference-deep-learning-training-inference-ai/"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Effort": {
+    "id": "Effort",
+    "date": "2024-12",
+    "label": "Dec 2024",
+    "event": "shipped",
+    "headline": "OpenAI ships a reasoning_effort parameter for o1 in the API",
+    "story": "In December 2024 OpenAI brought o1 to its API with a new reasoning_effort parameter that controls how long the model thinks before answering. Reasoning models spend extra output tokens on hidden reasoning, so users needed a way to trade cost and latency against answer quality. Anthropic added a comparable effort parameter with Claude Opus 4.5 on 24 November 2025.",
+    "roots": "OpenAI introduced o1 reasoning models in September 2024",
+    "from": [
+      "Output tokens",
+      "Next-token prediction"
+    ],
+    "sources": [
+      {
+        "title": "OpenAI: OpenAI o1 and new tools for developers",
+        "url": "https://openai.com/index/o1-and-new-tools-for-developers/"
+      },
+      {
+        "title": "Anthropic: Introducing Claude Opus 4.5",
+        "url": "https://www.anthropic.com/news/claude-opus-4-5"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Non-determinism": {
+    "id": "Non-determinism",
+    "date": "2025-09",
+    "label": "Sep 2025",
+    "event": "popularised",
+    "headline": "Thinking Machines explains why LLM output varies even at temperature 0",
+    "story": "On 10 September 2025 Horace He and colleagues at Thinking Machines Lab published \"Defeating Nondeterminism in LLM Inference\". They argued that the main cause is not just floating-point concurrency but kernels that are not batch-invariant: results change with batch size, which depends on server load. It gave developers a concrete reason why the same prompt can produce different outputs.",
+    "from": [
+      "Next-token prediction",
+      "Inference"
+    ],
+    "sources": [
+      {
+        "title": "Thinking Machines: Defeating Nondeterminism in LLM Inference",
+        "url": "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Model provider": {
+    "id": "Model provider",
+    "date": "2020-06",
+    "label": "Jun 2020",
+    "event": "shipped",
+    "headline": "OpenAI API beta offers GPT-3 as a hosted service",
+    "story": "OpenAI announced its API on 11 June 2020, giving developers access to its models over the web instead of releasing the weights. This created the pattern of a provider that hosts models and sells inference by usage. Applications could use a large model without training or running one themselves.",
+    "from": [
+      "Model",
+      "Inference"
+    ],
+    "sources": [
+      {
+        "title": "OpenAI: OpenAI API",
+        "url": "https://openai.com/index/openai-api/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Harness": {
+    "id": "Harness",
+    "date": "2025-11",
+    "label": "Nov 2025",
+    "event": "popularised",
+    "headline": "Anthropic writes up harness design for long-running coding agents",
+    "story": "On 26 November 2025 Anthropic published \"Effective harnesses for long-running agents\", using \"harness\" for the code around the model that supplies prompts, tools and state across sessions. As agents ran for hours, the surrounding scaffolding mattered as much as the model itself. The word was borrowed from software testing, where a test harness runs code under controlled conditions.",
+    "roots": "\"Test harness\" is an older software-testing term; EleutherAI's lm-evaluation-harness used it for model evaluation",
+    "from": [
+      "Agent",
+      "Tool",
+      "System prompt"
+    ],
+    "sources": [
+      {
+        "title": "Anthropic Engineering: Effective harnesses for long-running agents",
+        "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"
+      },
+      {
+        "title": "EleutherAI lm-evaluation-harness",
+        "url": "https://github.com/EleutherAI/lm-evaluation-harness"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Model provider request": {
+    "id": "Model provider request",
+    "date": "2023-03",
+    "label": "Mar 2023",
+    "event": "shipped",
+    "headline": "Chat Completions API: each request carries the full message list",
+    "story": "In March 2023 OpenAI opened gpt-3.5-turbo through an API that takes a sequence of messages, priced at $0.002 per 1K tokens. Each request has to include the conversation so far, because the model keeps nothing between calls. This message-list request shape became the common interface across model providers.",
+    "from": [
+      "Model provider"
+    ],
+    "sources": [
+      {
+        "title": "OpenAI: Introducing ChatGPT and Whisper APIs",
+        "url": "https://openai.com/index/introducing-chatgpt-and-whisper-apis/"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Input tokens": {
+    "id": "Input tokens",
+    "date": "2023-03",
+    "label": "Mar 2023",
+    "event": "shipped",
+    "headline": "GPT-4 prices prompt tokens and completion tokens separately",
+    "story": "At GPT-4's launch on 14 March 2023, OpenAI charged $0.03 per 1K prompt tokens and $0.06 per 1K completion tokens for the 8K model. Splitting the price made the cost of what you send (input) visible and separate from what the model writes. Input tokens include the full resent history, so long sessions get more expensive per call.",
+    "from": [
+      "Token",
+      "Model provider request"
+    ],
+    "sources": [
+      {
+        "title": "OpenAI: GPT-4",
+        "url": "https://openai.com/index/gpt-4-research/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Output tokens": {
+    "id": "Output tokens",
+    "date": "2023-03",
+    "label": "Mar 2023",
+    "event": "shipped",
+    "headline": "GPT-4 charges completion tokens at twice the prompt rate",
+    "story": "GPT-4's launch pricing on 14 March 2023 set completion (output) tokens at $0.06 per 1K, double the prompt rate. Generating tokens one at a time costs more compute than reading input, and the price reflected that. Output tokens became a separate cost and limit that developers had to plan around.",
+    "from": [
+      "Token",
+      "Model provider request"
+    ],
+    "sources": [
+      {
+        "title": "OpenAI: GPT-4",
+        "url": "https://openai.com/index/gpt-4-research/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Prefix cache": {
+    "id": "Prefix cache",
+    "date": "2024-08",
+    "label": "Aug 2024",
+    "event": "shipped",
+    "headline": "Anthropic ships prompt caching for repeated prompt prefixes",
+    "story": "In August 2024 Anthropic launched prompt caching in public beta, letting the API reuse the processed form of a long, repeated prompt prefix. Coding agents resend the same system prompt, tools and history on every call, and recomputing them wasted time and money. OpenAI followed with automatic prompt caching on 1 October 2024 at a 50% discount on cached input.",
+    "roots": "vLLM's PagedAttention (Sep 2023) showed sharing the KV cache within and across requests on the serving side",
+    "from": [
+      "Input tokens",
+      "Inference"
+    ],
+    "sources": [
+      {
+        "title": "Prompt caching with Claude",
+        "url": "https://claude.com/resources/articles/prompt-caching"
+      },
+      {
+        "title": "OpenAI: Prompt Caching in the API",
+        "url": "https://openai.com/index/api-prompt-caching/"
+      },
+      {
+        "title": "Efficient Memory Management for LLM Serving with PagedAttention (arXiv 2309.06180)",
+        "url": "https://arxiv.org/abs/2309.06180"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Cache tokens": {
+    "id": "Cache tokens",
+    "date": "2024-08",
+    "label": "Aug 2024",
+    "event": "shipped",
+    "headline": "Anthropic bills cache writes and cache reads as separate token types",
+    "story": "With prompt caching, Anthropic priced cache writes at 25% above the base input rate and cache reads at 10% of it (for Claude 3.5 Sonnet, $3.75 and $0.30 per million tokens). This added two new token categories to usage reports beside plain input and output. They let developers see how much of each request was served from cache.",
+    "from": [
+      "Prefix cache",
+      "Input tokens"
+    ],
+    "sources": [
+      {
+        "title": "Prompt caching with Claude",
+        "url": "https://claude.com/resources/articles/prompt-caching"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Stateless": {
+    "id": "Stateless",
+    "date": "2023-03",
+    "label": "Mar 2023",
+    "event": "popularised",
+    "headline": "Chat APIs keep no memory, so clients resend history every call",
+    "story": "The Chat Completions API introduced in March 2023 takes the whole message list on each request, and the model keeps nothing between calls. Developers and tools had to store the conversation themselves and send it again every time. This is the same stateless-server idea used in web architecture, applied to model calls.",
+    "roots": "Stateless client-server constraint described in Roy Fielding's REST dissertation (2000)",
+    "from": [
+      "Model provider request"
+    ],
+    "sources": [
+      {
+        "title": "OpenAI: Introducing ChatGPT and Whisper APIs",
+        "url": "https://openai.com/index/introducing-chatgpt-and-whisper-apis/"
+      },
+      {
+        "title": "Fielding dissertation, Ch. 5: REST",
+        "url": "https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm",
+        "unverified": true
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Context": {
+    "id": "Context",
+    "date": "2025-06",
+    "label": "Jun 2025",
+    "event": "popularised",
+    "headline": "\"Context engineering\" spreads as the name for curating what the model sees",
+    "story": "In mid-2025 developers began calling it \"context engineering\": deciding everything that goes into the model's window, including instructions, tools, files and history. Agents had made the prompt only a small part of what the model reads. Anthropic's 29 September 2025 post defined it as curating the best set of tokens at each step of inference.",
+    "roots": "GPT-3 paper (May 2020) described \"in-context learning\" from examples in the prompt",
+    "from": [
+      "Context window"
+    ],
+    "sources": [
+      {
+        "title": "Anthropic Engineering: Effective context engineering for AI agents",
+        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+      },
+      {
+        "title": "Language Models are Few-Shot Learners (arXiv 2005.14165)",
+        "url": "https://arxiv.org/abs/2005.14165"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Context window": {
+    "id": "Context window",
+    "date": "2023-05",
+    "label": "May 2023",
+    "event": "popularised",
+    "headline": "Claude expands its context window from 9K to 100K tokens",
+    "story": "On 11 May 2023 Anthropic expanded Claude's context window from 9K to 100K tokens, about 75,000 words. Earlier models could only fit a few pages, which limited how much code or text they could work with at once. In February 2024 Google offered Gemini 1.5 Pro with a standard 128K window and up to 1 million tokens in a limited preview.",
+    "roots": "GPT-2 (2019) had a 1,024-token window",
+    "from": [
+      "Token"
+    ],
+    "sources": [
+      {
+        "title": "Anthropic: Introducing 100K Context Windows",
+        "url": "https://www.anthropic.com/news/100k-context-windows"
+      },
+      {
+        "title": "Google: Our next-generation model: Gemini 1.5",
+        "url": "https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Stateful": {
+    "id": "Stateful",
+    "date": "2023-11",
+    "label": "Nov 2023",
+    "event": "shipped",
+    "headline": "OpenAI Assistants API stores conversation threads on the server",
+    "story": "At DevDay on 6 November 2023 OpenAI introduced the Assistants API with persistent threads, so developers could add messages to a stored thread instead of resending the history. This moved conversation state from the client to the provider. OpenAI's Responses API (11 March 2025) carried server-side state forward as its main agent interface.",
+    "from": [
+      "Stateless"
+    ],
+    "sources": [
+      {
+        "title": "OpenAI: New models and developer products announced at DevDay",
+        "url": "https://openai.com/index/new-models-and-developer-products-announced-at-devday/"
+      },
+      {
+        "title": "OpenAI: New tools for building agents",
+        "url": "https://openai.com/index/new-tools-for-building-agents/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Agent": {
+    "id": "Agent",
+    "date": "2022-10",
+    "label": "Oct 2022",
+    "event": "formalised",
+    "headline": "ReAct paper has language models alternate reasoning and actions",
+    "story": "Yao et al. posted \"ReAct: Synergizing Reasoning and Acting in Language Models\" on 6 October 2022. It showed a model writing a thought, taking an action such as a search, reading the result and repeating, instead of answering in one pass. This loop is the basis of today's LLM agents; projects like AutoGPT spread the idea widely in spring 2023.",
+    "roots": "\"Intelligent agent\" framing in classic AI, e.g. Russell & Norvig (1995)",
+    "from": [
+      "Model"
+    ],
+    "sources": [
+      {
+        "title": "ReAct: Synergizing Reasoning and Acting in Language Models (arXiv 2210.03629)",
+        "url": "https://arxiv.org/abs/2210.03629"
+      },
+      {
+        "title": "AutoGPT repository",
+        "url": "https://github.com/Significant-Gravitas/AutoGPT",
+        "unverified": true
+      }
+    ],
+    "confidence": "high"
+  },
+  "System prompt": {
+    "id": "System prompt",
+    "date": "2023-03",
+    "label": "Mar 2023",
+    "event": "shipped",
+    "headline": "Chat API adds a role-tagged message format with a system role",
+    "story": "OpenAI's March 2023 chat API took role-tagged messages in a format it called ChatML, including a system message that sets the model's instructions before the user speaks. This separated standing instructions from the conversation itself. Coding agents now put their rules, tool descriptions and project context in the system prompt.",
+    "from": [
+      "Model provider request"
+    ],
+    "sources": [
+      {
+        "title": "OpenAI: Introducing ChatGPT and Whisper APIs",
+        "url": "https://openai.com/index/introducing-chatgpt-and-whisper-apis/"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Session": {
+    "id": "Session",
+    "date": "2025-02",
+    "label": "Feb 2025",
+    "event": "shipped",
+    "headline": "Claude Code brings long-running agent sessions to the terminal",
+    "story": "Anthropic released Claude Code as a research preview on 24 February 2025, a command-line tool that works on a codebase within a single ongoing session. A session holds the conversation, tool calls and results that make up one context window's worth of work. The idea came from chat conversations, which ChatGPT made familiar from November 2022.",
+    "roots": "ChatGPT conversations (Nov 2022) made the multi-message chat session familiar",
+    "from": [
+      "Context window",
+      "Agent"
+    ],
+    "sources": [
+      {
+        "title": "Anthropic: Claude 3.7 Sonnet and Claude Code",
+        "url": "https://www.anthropic.com/news/claude-3-7-sonnet"
+      },
+      {
+        "title": "OpenAI: Introducing ChatGPT",
+        "url": "https://openai.com/index/chatgpt/"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Turn": {
+    "id": "Turn",
+    "date": "2023-03",
+    "label": "Mar 2023",
+    "event": "formalised",
+    "headline": "Chat APIs structure conversations as alternating user and assistant turns",
+    "story": "The March 2023 chat API represented a conversation as a list of messages, each tagged with a role, so every exchange is a user turn followed by an assistant turn. This gave a clear unit for counting progress and cost in a session. In coding agents one user turn can contain many model calls and tool results before the reply.",
+    "roots": "Conversation-analysis study of turn-taking by Sacks, Schegloff and Jefferson (Language, 1974)",
+    "from": [
+      "Session",
+      "Model provider request"
+    ],
+    "sources": [
+      {
+        "title": "OpenAI: Introducing ChatGPT and Whisper APIs",
+        "url": "https://openai.com/index/introducing-chatgpt-and-whisper-apis/"
+      },
+      {
+        "title": "A Simplest Systematics for the Organization of Turn-Taking for Conversation (JSTOR)",
+        "url": "https://www.jstor.org/stable/412243",
+        "unverified": true
+      }
+    ],
+    "confidence": "low"
+  },
+  "Environment": {
+    "id": "Environment",
+    "date": "2016-04",
+    "label": "Apr 2016",
+    "event": "popularised",
+    "headline": "OpenAI Gym beta gives RL agents a standard environment interface",
+    "story": "OpenAI released Gym, a toolkit of standard environments in which a reinforcement-learning agent acts and receives observations and rewards. Researchers needed a shared, reproducible definition of the world an agent operates in so results could be compared. The agent/environment split from RL carried over to LLM agents, where the environment is the repo, shell and tools the agent can act on.",
+    "roots": "Agent/environment framing in reinforcement learning (Sutton & Barto, 1998)",
+    "from": [],
+    "sources": [
+      {
+        "title": "OpenAI Gym Beta (OpenAI, 27 Apr 2016)",
+        "url": "https://openai.com/index/openai-gym-beta/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Filesystem": {
+    "id": "Filesystem",
+    "date": "2025-02",
+    "label": "Feb 2025",
+    "event": "shipped",
+    "headline": "Claude Code preview lets an agent read and edit files from the terminal",
+    "story": "Anthropic launched Claude Code as a research preview: a command-line agent that searches and reads code, edits files, runs tests and commits from the developer's terminal. Working directly on the local filesystem removed the copy-paste step between a chat window and the codebase. The hierarchical file system, decades older, became the agent's main working environment.",
+    "roots": "Multics hierarchical file system, Daley & Neumann, 1965 Fall Joint Computer Conference",
+    "from": [
+      "Environment",
+      "Tool"
+    ],
+    "sources": [
+      {
+        "title": "Claude 3.7 Sonnet and Claude Code (Anthropic, 24 Feb 2025)",
+        "url": "https://www.anthropic.com/news/claude-3-7-sonnet"
+      },
+      {
+        "title": "A General-Purpose File System For Secondary Storage (Daley & Neumann, 1965)",
+        "url": "https://www.multicians.org/fjcc4.html"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Tool": {
+    "id": "Tool",
+    "date": "2023-02",
+    "label": "Feb 2023",
+    "event": "formalised",
+    "headline": "Toolformer shows a language model can learn when to call external tools",
+    "story": "Schick et al. trained a model to insert API calls (calculator, search, translation) into its own text and use the returned results. Models alone were weak at arithmetic, fresh facts and lookups, which external tools handle reliably. A month later, ChatGPT plugins (23 Mar 2023) put tools in front of a mass audience.",
+    "roots": "",
+    "from": [
+      "Model",
+      "Agent"
+    ],
+    "sources": [
+      {
+        "title": "Toolformer (arXiv 2302.04761, 9 Feb 2023)",
+        "url": "https://arxiv.org/abs/2302.04761"
+      },
+      {
+        "title": "ChatGPT plugins (OpenAI, 23 Mar 2023)",
+        "url": "https://openai.com/index/chatgpt-plugins/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Tool call": {
+    "id": "Tool call",
+    "date": "2023-06",
+    "label": "Jun 2023",
+    "event": "shipped",
+    "headline": "OpenAI ships function calling: models emit JSON arguments for functions",
+    "story": "Developers could describe functions with JSON Schema, and gpt-4-0613 / gpt-3.5-turbo-0613 would output a JSON object naming the function and its arguments. Before this, apps parsed tool requests out of free text, which was brittle. It turned the Toolformer-style idea of tools into a structured API contract that next-token prediction fills in.",
+    "roots": "",
+    "from": [
+      "Tool",
+      "Next-token prediction"
+    ],
+    "sources": [
+      {
+        "title": "Function calling and other API updates (OpenAI, 13 Jun 2023)",
+        "url": "https://openai.com/index/function-calling-and-other-api-updates/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Tool result": {
+    "id": "Tool result",
+    "date": "2024-05",
+    "label": "May 2024",
+    "event": "shipped",
+    "headline": "Anthropic tool use goes GA with tool_use / tool_result message blocks",
+    "story": "Anthropic made tool use generally available on the Claude API; the application runs the requested tool and sends its output back in a tool_result block matched by tool_use_id. The model needs the outcome of each call to decide its next step, so results must re-enter the conversation in a structured way. This closes the loop that tool calls open; OpenAI's June 2023 API did the same with function-role messages.",
+    "roots": "OpenAI function-role messages, Jun 2023",
+    "from": [
+      "Tool call"
+    ],
+    "sources": [
+      {
+        "title": "Tool use is now generally available (Anthropic, 30 May 2024)",
+        "url": "https://claude.com/resources/articles/tool-use-ga"
+      },
+      {
+        "title": "Tool use overview (Claude API docs)",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "MCP": {
+    "id": "MCP",
+    "date": "2024-11",
+    "label": "Nov 2024",
+    "event": "coined",
+    "headline": "Anthropic open-sources the Model Context Protocol",
+    "story": "Anthropic released MCP, an open standard for connecting AI applications to data sources and tools. Every assistant-to-system integration had been custom-built, so N apps times M systems meant N×M connectors. A single protocol lets any harness plug into any server that exposes tools; adoption by other vendors, including OpenAI's Agents SDK, followed in 2025.",
+    "roots": "",
+    "from": [
+      "Tool",
+      "Tool call"
+    ],
+    "sources": [
+      {
+        "title": "Introducing the Model Context Protocol (Anthropic, 25 Nov 2024)",
+        "url": "https://www.anthropic.com/news/model-context-protocol"
+      },
+      {
+        "title": "MCP in the OpenAI Agents SDK (docs)",
+        "url": "https://openai.github.io/openai-agents-python/mcp/",
+        "unverified": true
+      }
+    ],
+    "confidence": "high"
+  },
+  "Permission request": {
+    "id": "Permission request",
+    "date": "2025-02",
+    "label": "Feb 2025",
+    "event": "shipped",
+    "headline": "Claude Code asks before editing files or running commands",
+    "story": "Claude Code launched with a tiered permission system: reads run freely, while shell commands and file edits pause for the user's approval. An agent that can change files and execute commands can do damage, so each risky tool call needs a human checkpoint. It applies the human-in-the-loop idea to individual tool calls.",
+    "roots": "",
+    "from": [
+      "Tool call",
+      "Human-in-the-loop"
+    ],
+    "sources": [
+      {
+        "title": "Claude 3.7 Sonnet and Claude Code (Anthropic, 24 Feb 2025)",
+        "url": "https://www.anthropic.com/news/claude-3-7-sonnet"
+      },
+      {
+        "title": "Configure permissions (Claude Code docs)",
+        "url": "https://code.claude.com/docs/en/permissions"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Permission mode": {
+    "id": "Permission mode",
+    "date": "2025",
+    "label": "2025",
+    "event": "shipped",
+    "headline": "Claude Code adds modes: default, acceptEdits, plan, bypassPermissions",
+    "story": "Claude Code grouped approval behaviour into session-wide modes: default prompts on first use of each tool, acceptEdits auto-accepts file edits, plan restricts the agent to read-only exploration, and bypassPermissions skips prompts. Approving every action one by one was slow, and different tasks need different levels of trust. Modes set a policy over many permission requests at once; later versions added an auto mode with a classifier.",
+    "roots": "",
+    "from": [
+      "Permission request"
+    ],
+    "sources": [
+      {
+        "title": "Configure permissions: Permission modes (Claude Code docs)",
+        "url": "https://code.claude.com/docs/en/permissions"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Agent mode": {
+    "id": "Agent mode",
+    "date": "2025-02",
+    "label": "Feb 2025",
+    "event": "shipped",
+    "headline": "GitHub Copilot previews agent mode in VS Code",
+    "story": "GitHub introduced agent mode for Copilot in VS Code Insiders, which iterates on its own code, recognises errors, suggests terminal commands and keeps going until related subtasks are done. Chat and inline edits required the developer to drive every step. Agent mode packaged the agent loop as a toggle inside an existing editor, alongside a system prompt and tool permissions.",
+    "roots": "Cursor and other editors offered agent-style modes from late 2024",
+    "from": [
+      "Agent",
+      "Permission mode",
+      "System prompt"
+    ],
+    "sources": [
+      {
+        "title": "GitHub Copilot: The agent awakens (GitHub Blog, 6 Feb 2025)",
+        "url": "https://github.blog/news-insights/product-news/github-copilot-the-agent-awakens/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Sandbox": {
+    "id": "Sandbox",
+    "date": "2025-05",
+    "label": "May 2025",
+    "event": "shipped",
+    "headline": "OpenAI Codex runs each coding task in an isolated cloud sandbox",
+    "story": "OpenAI's Codex ran each task in its own cloud container preloaded with the repository, with internet access disabled at launch. Letting an agent execute code is risky, and isolation bounds what it can touch. Anthropic added OS-level filesystem and network sandboxing to Claude Code in Oct 2025, reporting 84% fewer permission prompts, so sandboxes became a way to reduce permission requests.",
+    "roots": "Software fault isolation (Wahbe et al., 1993); Java applet sandbox (1995)",
+    "from": [
+      "Environment",
+      "Permission mode"
+    ],
+    "sources": [
+      {
+        "title": "Introducing Codex (OpenAI, 16 May 2025)",
+        "url": "https://openai.com/index/introducing-codex/"
+      },
+      {
+        "title": "Beyond permission prompts: Claude Code sandboxing (Anthropic, 20 Oct 2025)",
+        "url": "https://www.anthropic.com/engineering/claude-code-sandboxing"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Sycophancy": {
+    "id": "Sycophancy",
+    "date": "2025-04",
+    "label": "Apr 2025",
+    "event": "popularised",
+    "headline": "OpenAI rolls back a GPT-4o update for being overly agreeable",
+    "story": "OpenAI reverted a ChatGPT GPT-4o update after it became excessively flattering and agreeable, saying it had over-weighted short-term thumbs-up feedback. Anthropic researchers had shown in Oct 2023 that assistants tend to agree with users and that human preference data rewards this. For coding, it shows up as models accepting a wrong premise or praising flawed code.",
+    "roots": "Perez et al. 2022 (model-written evals); Sharma et al., 'Towards Understanding Sycophancy in Language Models', Oct 2023",
+    "from": [
+      "Training"
+    ],
+    "sources": [
+      {
+        "title": "Sycophancy in GPT-4o (OpenAI, 29 Apr 2025)",
+        "url": "https://openai.com/index/sycophancy-in-gpt-4o/"
+      },
+      {
+        "title": "Towards Understanding Sycophancy in Language Models (arXiv 2310.13548, 20 Oct 2023)",
+        "url": "https://arxiv.org/abs/2310.13548"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Hallucination": {
+    "id": "Hallucination",
+    "date": "2023-11",
+    "label": "Nov 2023",
+    "event": "popularised",
+    "headline": "Cambridge Dictionary names 'hallucinate' its Word of the Year",
+    "story": "Cambridge Dictionary added the AI sense of 'hallucinate', meaning to produce false information, and made it Word of the Year for 2023. Fluent output from next-token prediction can be confidently wrong, and users needed a word for it. NLP researchers had used the term for unfaithful machine translation and summarisation output since 2018–2020.",
+    "roots": "Lee et al. 2018 (NMT hallucinations); Maynez et al., 'On Faithfulness and Factuality in Abstractive Summarization', May 2020",
+    "from": [
+      "Next-token prediction",
+      "Parametric knowledge"
+    ],
+    "sources": [
+      {
+        "title": "Cambridge Dictionary names 'hallucinate' Word of the Year 2023 (15 Nov 2023)",
+        "url": "https://www.cam.ac.uk/research/news/cambridge-dictionary-names-hallucinate-word-of-the-year-2023"
+      },
+      {
+        "title": "On Faithfulness and Factuality in Abstractive Summarization (arXiv 2005.00661, 2 May 2020)",
+        "url": "https://arxiv.org/abs/2005.00661"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Parametric knowledge": {
+    "id": "Parametric knowledge",
+    "date": "2020-05",
+    "label": "May 2020",
+    "event": "formalised",
+    "headline": "RAG paper names parametric vs non-parametric memory",
+    "story": "Lewis et al. described a model whose knowledge lives in two places: parametric memory in the seq2seq model's weights, and non-parametric memory in a retrievable Wikipedia index. Petroni et al. (2019) had shown that pretrained models store recoverable facts in their parameters. Naming the weight-stored kind made it possible to contrast it with knowledge supplied at runtime.",
+    "roots": "Petroni et al., 'Language Models as Knowledge Bases?', Sep 2019",
+    "from": [
+      "Parameters",
+      "Training"
+    ],
+    "sources": [
+      {
+        "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (arXiv 2005.11401, 22 May 2020)",
+        "url": "https://arxiv.org/abs/2005.11401"
+      },
+      {
+        "title": "Language Models as Knowledge Bases? (arXiv 1909.01066, 3 Sep 2019)",
+        "url": "https://arxiv.org/abs/1909.01066"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Knowledge cutoff": {
+    "id": "Knowledge cutoff",
+    "date": "2023-03",
+    "label": "Mar 2023",
+    "event": "popularised",
+    "headline": "GPT-4 launch states it lacks knowledge after its Sept 2021 data cutoff",
+    "story": "OpenAI's GPT-4 announcement said the model lacks knowledge of events after most of its data cuts off in September 2021. A model knows only what was in its training data, so anything later, including new library versions and APIs, is missing. Stating the cutoff became standard in model cards and system prompts.",
+    "roots": "ChatGPT (Nov 2022) showed a similar in-app disclaimer about events after 2021",
+    "from": [
+      "Parametric knowledge",
+      "Training"
+    ],
+    "sources": [
+      {
+        "title": "GPT-4 (OpenAI, 14 Mar 2023)",
+        "url": "https://openai.com/index/gpt-4-research/"
+      },
+      {
+        "title": "Introducing ChatGPT (OpenAI, 30 Nov 2022)",
+        "url": "https://openai.com/index/chatgpt/",
+        "unverified": true
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Contextual knowledge": {
+    "id": "Contextual knowledge",
+    "date": "2021-09",
+    "label": "Sep 2021",
+    "event": "formalised",
+    "headline": "Study of knowledge conflicts contrasts contextual vs parametric knowledge",
+    "story": "Longpre et al. studied what happens when a passage given at inference time contradicts what a model learned in training. Models could ignore the supplied passage and answer from memory, which is a form of hallucination. Separating contextual knowledge (in the prompt) from parametric knowledge (in the weights) explains why putting docs into context changes answers.",
+    "roots": "",
+    "from": [
+      "Parametric knowledge"
+    ],
+    "sources": [
+      {
+        "title": "Entity-Based Knowledge Conflicts in Question Answering (arXiv 2109.05052, 10 Sep 2021)",
+        "url": "https://arxiv.org/abs/2109.05052"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Attention relationship": {
+    "id": "Attention relationship",
+    "date": "2017-06",
+    "label": "Jun 2017",
+    "event": "formalised",
+    "headline": "Transformer makes every token attend to every other token",
+    "story": "'Attention Is All You Need' introduced the Transformer, where self-attention relates each token to every other token in the input, so cost grows with the square of length. Recurrent models processed text sequentially and struggled with long-range dependencies. Bahdanau et al. (2014) introduced attention for translation; the Transformer made it the whole architecture.",
+    "roots": "Bahdanau, Cho & Bengio, attention for NMT, Sep 2014",
+    "from": [
+      "Token"
+    ],
+    "sources": [
+      {
+        "title": "Attention Is All You Need (arXiv 1706.03762, 12 Jun 2017)",
+        "url": "https://arxiv.org/abs/1706.03762"
+      },
+      {
+        "title": "Neural Machine Translation by Jointly Learning to Align and Translate (arXiv 1409.0473, 1 Sep 2014)",
+        "url": "https://arxiv.org/abs/1409.0473"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Attention budget": {
+    "id": "Attention budget",
+    "date": "2025-09",
+    "label": "Sep 2025",
+    "event": "coined",
+    "headline": "Anthropic describes LLMs as having a finite 'attention budget'",
+    "story": "Anthropic's context-engineering post said LLMs have an attention budget they draw on when parsing large context, and every added token spends some of it. Teams were filling large context windows on the assumption that more context is free. Because attention relates every token pair, the post framed context as a finite resource to curate.",
+    "roots": "",
+    "from": [
+      "Attention relationship",
+      "Context window"
+    ],
+    "sources": [
+      {
+        "title": "Effective context engineering for AI agents (Anthropic, 29 Sep 2025)",
+        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Attention degradation": {
+    "id": "Attention degradation",
+    "date": "2025-07",
+    "label": "Jul 2025",
+    "event": "popularised",
+    "headline": "Chroma's 'Context Rot' report: performance drops as input grows",
+    "story": "Chroma tested 18 LLMs and found output became less reliable as input length increased, even on simple tasks. Vendors advertised ever-larger context windows, implying all of it was equally usable. The earlier 'Lost in the Middle' paper (Jul 2023) had shown models use information at the start and end of context better than in the middle.",
+    "roots": "Liu et al., 'Lost in the Middle', Jul 2023",
+    "from": [
+      "Attention relationship",
+      "Context window"
+    ],
+    "sources": [
+      {
+        "title": "Context Rot (Chroma Research, 14 Jul 2025)",
+        "url": "https://www.trychroma.com/research/context-rot"
+      },
+      {
+        "title": "Lost in the Middle (arXiv 2307.03172, 6 Jul 2023)",
+        "url": "https://arxiv.org/abs/2307.03172"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Smart zone": {
+    "id": "Smart zone",
+    "date": "2025-12",
+    "label": "Dec 2025",
+    "event": "coined",
+    "headline": "Dex Horthy's 'No Vibes Allowed' talk names the context 'dumb zone'",
+    "story": "In an AI Engineer talk (video posted 2 Dec 2025), Dex Horthy of HumanLayer described a 'dumb zone' where agent output degrades as the context window fills; the part before it came to be called the 'smart zone'. HumanLayer's earlier write-up advised keeping context utilisation around 40–60% through frequent intentional compaction. The idea turns attention degradation into a practical rule for when to compact or clear.",
+    "roots": "HumanLayer 'Advanced Context Engineering for Coding Agents' (Aug 2025): keep utilisation in the 40–60% range",
+    "from": [
+      "Attention degradation",
+      "Compaction"
+    ],
+    "sources": [
+      {
+        "title": "No Vibes Allowed: Solving Hard Problems in Complex Codebases – Dex Horthy (AI Engineer, 2 Dec 2025)",
+        "url": "https://www.youtube.com/watch?v=rmvDxxNubIg"
+      },
+      {
+        "title": "Long-Context Isn't the Answer (HumanLayer blog, 23 Mar 2026) – uses 'smart zone'/'dumb zone', links the talk",
+        "url": "https://www.humanlayer.dev/blog/long-context-isnt-the-answer"
+      },
+      {
+        "title": "Advanced Context Engineering for Coding Agents (HumanLayer)",
+        "url": "https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Clearing": {
+    "id": "Clearing",
+    "date": "2025-02",
+    "label": "Feb 2025",
+    "event": "shipped",
+    "headline": "Claude Code ships with /clear to wipe the conversation and start fresh",
+    "story": "Claude Code launched as a research preview with a /clear command that empties the conversation while keeping the project open. Long sessions fill the context window with stale material, and starting over is cheaper and cleaner than carrying it forward. It is the blunt counterpart to keeping one session alive indefinitely.",
+    "from": [
+      "Session",
+      "Context window"
+    ],
+    "sources": [
+      {
+        "title": "Claude 3.7 Sonnet and Claude Code (Anthropic, 24 Feb 2025)",
+        "url": "https://www.anthropic.com/news/claude-3-7-sonnet"
+      },
+      {
+        "title": "Claude Code docs: Manage costs effectively (/clear between tasks)",
+        "url": "https://code.claude.com/docs/en/costs"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Handoff": {
+    "id": "Handoff",
+    "date": "2024-10",
+    "label": "Oct 2024",
+    "event": "popularised",
+    "headline": "OpenAI's Swarm makes 'handoffs' a core primitive for passing work between agents",
+    "story": "OpenAI's experimental Swarm library framed multi-agent work around two primitives: agents and handoffs, where one agent passes control and context to another. The idea carried into the OpenAI Agents SDK in March 2025. It answered the problem that one session or agent cannot hold every task, so work has to be passed on with enough context to continue.",
+    "roots": "Shift-change and handover practice in operations and medicine",
+    "from": [
+      "Agent"
+    ],
+    "sources": [
+      {
+        "title": "openai/swarm README (handoffs; replaced by Agents SDK)",
+        "url": "https://github.com/openai/swarm"
+      },
+      {
+        "title": "New tools for building agents (OpenAI, 11 Mar 2025)",
+        "url": "https://openai.com/index/new-tools-for-building-agents/"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Primary source": {
+    "id": "Primary source",
+    "date": "1824",
+    "label": "1824",
+    "event": "formalised",
+    "headline": "Ranke's source criticism puts primary sources at the base of historical method",
+    "story": "Leopold von Ranke's 1824 work on the Romance and Germanic peoples, with its appended critique of earlier historians, set out the rule of working from original documents rather than later accounts. The distinction matters for agents in the same way: a file, log or doc read directly is more trustworthy than a summary of it.",
+    "roots": "19th-century German historiography",
+    "from": [],
+    "sources": [
+      {
+        "title": "Library of Congress: Getting started with primary sources",
+        "url": "https://www.loc.gov/programs/teachers/getting-started-with-primary-sources/",
+        "unverified": true
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Secondary source": {
+    "id": "Secondary source",
+    "date": "1824",
+    "label": "1824",
+    "event": "formalised",
+    "headline": "Historians separate secondhand accounts from original documents",
+    "story": "The same 19th-century source-critical method that elevated original documents classed later interpretations and summaries as secondary sources. Secondary sources are useful but lossy, since they reflect someone else's selection. In agent work, summaries, compaction output and handoff notes play this role.",
+    "roots": "19th-century German historiography",
+    "from": [
+      "Primary source"
+    ],
+    "sources": [
+      {
+        "title": "Library of Congress: Getting started with primary sources",
+        "url": "https://www.loc.gov/programs/teachers/getting-started-with-primary-sources/",
+        "unverified": true
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Handoff artifact": {
+    "id": "Handoff artifact",
+    "date": "2025-11",
+    "label": "Nov 2025",
+    "event": "formalised",
+    "headline": "Anthropic describes a progress file that each new agent session reads first",
+    "story": "Anthropic's engineering post on long-running agents described an initializer agent that creates claude-progress.txt, which later sessions read at start and update before finishing, alongside git history and a feature list. Each new session starts with no memory, so a written artifact lets it pick up the previous session's state without guessing. It turns a handoff into a durable file rather than a conversation.",
+    "from": [
+      "Handoff",
+      "Secondary source"
+    ],
+    "sources": [
+      {
+        "title": "Effective harnesses for long-running agents (Anthropic, 26 Nov 2025)",
+        "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Spec": {
+    "id": "Spec",
+    "date": "2025-07",
+    "label": "Jul 2025",
+    "event": "popularised",
+    "headline": "AWS Kiro launches with spec-driven development for AI agents",
+    "story": "Kiro, launched 14 July 2025, turns a prompt into requirements, a design and a task list that guide the agent's implementation. GitHub followed on 2 September 2025 with the open-source Spec Kit for Copilot, Claude Code and Gemini CLI. Both responded to agents building the wrong thing from vague prompts by making a written specification the source of truth.",
+    "roots": "Software requirements specifications in classic software engineering",
+    "from": [
+      "Design concept"
+    ],
+    "sources": [
+      {
+        "title": "Introducing Kiro (14 Jul 2025)",
+        "url": "https://kiro.dev/blog/introducing-kiro/"
+      },
+      {
+        "title": "Spec-driven development with AI: GitHub Spec Kit (2 Sep 2025)",
+        "url": "https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Ticket": {
+    "id": "Ticket",
+    "date": "2025-05",
+    "label": "May 2025",
+    "event": "shipped",
+    "headline": "GitHub lets you assign an issue to the Copilot coding agent",
+    "story": "On 19 May 2025 GitHub introduced a Copilot coding agent that takes an assigned issue, works in the background and opens a pull request. The issue ticket, long used to hand work between people, became a way to hand work to an agent. A ticket carries a scoped spec plus tracking, which suits unattended agent runs.",
+    "roots": "Bug trackers such as Bugzilla (1998) and Jira (2002)",
+    "from": [
+      "Agent"
+    ],
+    "sources": [
+      {
+        "title": "GitHub Copilot: Meet the new coding agent (19 May 2025)",
+        "url": "https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Compaction": {
+    "id": "Compaction",
+    "date": "2025-02",
+    "label": "Feb 2025",
+    "event": "shipped",
+    "headline": "Claude Code's /compact summarises history to free context space",
+    "story": "Claude Code's /compact replaces earlier conversation with a summary so work can continue in the same session, optionally guided by instructions on what to keep. It addresses context windows filling up during long tasks. It is a handoff to yourself: the summary is a secondary source standing in for the original transcript.",
+    "from": [
+      "Handoff",
+      "Secondary source",
+      "Context window"
+    ],
+    "sources": [
+      {
+        "title": "Claude 3.7 Sonnet and Claude Code (24 Feb 2025)",
+        "url": "https://www.anthropic.com/news/claude-3-7-sonnet"
+      },
+      {
+        "title": "Claude Code docs: Manage costs effectively (/compact)",
+        "url": "https://code.claude.com/docs/en/costs"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Autocompact": {
+    "id": "Autocompact",
+    "date": "2025-03",
+    "label": "Mar 2025",
+    "event": "shipped",
+    "headline": "Claude Code 0.2.47 adds automatic conversation compaction",
+    "story": "Claude Code 0.2.47 (18 Mar 2025) added \"automatic conversation compaction for infinite conversation length\". Compaction had been a manual /compact command; running it automatically as the context window nears full stops long sessions from hitting the limit mid-task.",
+    "from": [
+      "Compaction"
+    ],
+    "sources": [
+      {
+        "title": "Claude Code CHANGELOG (GitHub)",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code release dates (npm)",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code?activeTab=versions"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Memory system": {
+    "id": "Memory system",
+    "date": "2023-10",
+    "label": "Oct 2023",
+    "event": "coined",
+    "headline": "MemGPT proposes OS-style memory tiers so LLMs can remember beyond context",
+    "story": "The MemGPT paper (Packer et al., 12 Oct 2023) treated the context window like RAM and gave the model tools to page information to and from external storage. Models are stateless between calls, so persistent memory has to be built outside them. ChatGPT shipped user-facing memory on 13 February 2024.",
+    "from": [
+      "Stateless"
+    ],
+    "sources": [
+      {
+        "title": "MemGPT: Towards LLMs as Operating Systems (arXiv 2310.08560)",
+        "url": "https://arxiv.org/abs/2310.08560"
+      },
+      {
+        "title": "Memory and new controls for ChatGPT (13 Feb 2024)",
+        "url": "https://openai.com/index/memory-and-new-controls-for-chatgpt/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "AGENTS.md": {
+    "id": "AGENTS.md",
+    "date": "2025-08",
+    "label": "Aug 2025",
+    "event": "formalised",
+    "headline": "AGENTS.md released as a shared instructions file for coding agents",
+    "story": "AGENTS.md was released in August 2025 as a plain Markdown 'README for agents', backed by OpenAI Codex, Google Jules, Cursor, Factory and Amp. It followed vendor-specific files such as Claude Code's CLAUDE.md (Feb 2025), giving projects one file instead of many. OpenAI donated it to the Linux Foundation's Agentic AI Foundation on 9 December 2025.",
+    "roots": "CLAUDE.md, Cursor rules and similar per-tool instruction files",
+    "from": [
+      "System prompt",
+      "Memory system",
+      "Context"
+    ],
+    "sources": [
+      {
+        "title": "AGENTS.md",
+        "url": "https://agents.md/"
+      },
+      {
+        "title": "OpenAI co-founds the Agentic AI Foundation (9 Dec 2025)",
+        "url": "https://openai.com/index/agentic-ai-foundation/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Progressive disclosure": {
+    "id": "Progressive disclosure",
+    "date": "2025-10",
+    "label": "Oct 2025",
+    "event": "popularised",
+    "headline": "Anthropic's Agent Skills adopt progressive disclosure for agent context",
+    "story": "Anthropic's Agent Skills post called progressive disclosure the core design principle: only skill names and descriptions load up front, the full SKILL.md loads when relevant, and linked files load only when needed. Context is a limited budget, so loading everything at once wastes it. The idea comes from UI design, where advanced options are deferred to secondary screens.",
+    "roots": "UI design principle from the 1980s; Jakob Nielsen's article, Dec 2006",
+    "from": [
+      "Context pointer",
+      "Attention budget"
+    ],
+    "sources": [
+      {
+        "title": "Equipping agents for the real world with Agent Skills (Anthropic, 16 Oct 2025)",
+        "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills"
+      },
+      {
+        "title": "Progressive Disclosure (Nielsen, 3 Dec 2006)",
+        "url": "https://www.nngroup.com/articles/progressive-disclosure/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Context pointer": {
+    "id": "Context pointer",
+    "date": "2025-05",
+    "label": "May 2025",
+    "event": "shipped",
+    "headline": "CLAUDE.md gains @path imports to pull in other files",
+    "story": "Claude Code 0.2.107 (9 May 2025) let CLAUDE.md import other files with @path/to/file.md. Instruction files could now point at documents instead of inlining them. The name \"context pointer\" is this dictionary's; linking to docs from AGENTS.md files is the same practice.",
+    "from": [
+      "Memory system",
+      "Context window"
+    ],
+    "sources": [
+      {
+        "title": "Manage Claude's memory — Claude Code docs",
+        "url": "https://code.claude.com/docs/en/memory"
+      },
+      {
+        "title": "Claude Code CHANGELOG (GitHub)",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code release dates (npm)",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code?activeTab=versions"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Skill": {
+    "id": "Skill",
+    "date": "2025-10",
+    "label": "Oct 2025",
+    "event": "shipped",
+    "headline": "Anthropic launches Agent Skills: folders of instructions loaded on demand",
+    "story": "On 16 October 2025 Anthropic introduced Agent Skills, folders with a SKILL.md and optional scripts that Claude loads only when a task matches. They let teams package procedures without bloating every session's context. On 18 December 2025 Agent Skills became an open standard documented at agentskills.io.",
+    "from": [
+      "Progressive disclosure",
+      "Context pointer",
+      "AGENTS.md"
+    ],
+    "sources": [
+      {
+        "title": "Claude Skills announcement (16 Oct 2025; update 18 Dec 2025)",
+        "url": "https://claude.com/resources/articles/skills"
+      },
+      {
+        "title": "Equipping agents for the real world with Agent Skills",
+        "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Subagent": {
+    "id": "Subagent",
+    "date": "2025-07",
+    "label": "Jul 2025",
+    "event": "shipped",
+    "headline": "Claude Code 1.0.60 lets you create custom subagents with /agents",
+    "story": "Claude Code added user-defined subagents, Markdown files in .claude/agents/ with their own system prompt, tools and model, managed through /agents. Each runs in a separate context window and returns only a summary. This keeps noisy side work such as searches and test runs out of the main conversation.",
+    "from": [
+      "Agent",
+      "Tool call",
+      "Session"
+    ],
+    "sources": [
+      {
+        "title": "Subagents — Claude Code docs",
+        "url": "https://code.claude.com/docs/en/sub-agents"
+      },
+      {
+        "title": "Claude Code CHANGELOG (GitHub)",
+        "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      },
+      {
+        "title": "@anthropic-ai/claude-code release dates (npm)",
+        "url": "https://www.npmjs.com/package/@anthropic-ai/claude-code?activeTab=versions"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Human-in-the-loop": {
+    "id": "Human-in-the-loop",
+    "date": "1998",
+    "label": "1998",
+    "event": "formalised",
+    "headline": "'Human-in-the-loop' defined in US DoD modelling and simulation glossary",
+    "story": "The term comes from simulation and control systems, where a model needs a human operator's input to run; a 1998 DoD glossary gives a formal definition. Machine learning later used it for humans labelling or correcting models. In AI coding it describes a person approving or steering an agent's actions.",
+    "roots": "Earlier use in simulation and control engineering",
+    "from": [],
+    "sources": [
+      {
+        "title": "Human-in-the-loop (Wikipedia)",
+        "url": "https://en.wikipedia.org/wiki/Human-in-the-loop"
+      }
+    ],
+    "confidence": "low"
+  },
+  "AFK": {
+    "id": "AFK",
+    "date": "2025-05",
+    "label": "May 2025",
+    "event": "popularised",
+    "headline": "Cloud coding agents let developers hand off tasks and walk away",
+    "story": "OpenAI's Codex (16 May 2025) ran each task in its own cloud sandbox in the background, and GitHub's Copilot coding agent followed days later. On 14 July 2025 Geoffrey Huntley described 'Ralph', a bash loop that repeatedly feeds a prompt to a coding agent with no one watching. Unattended runs depend on sandboxes and permission modes that remove the need for a human at each step.",
+    "roots": "1990s chat and gaming slang, 'away from keyboard'",
+    "from": [
+      "Human-in-the-loop",
+      "Sandbox",
+      "Permission mode"
+    ],
+    "sources": [
+      {
+        "title": "Introducing Codex (OpenAI, 16 May 2025)",
+        "url": "https://openai.com/index/introducing-codex/"
+      },
+      {
+        "title": "Ralph Wiggum as a software engineer (Huntley, 14 Jul 2025)",
+        "url": "https://ghuntley.com/ralph/"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Automated check": {
+    "id": "Automated check",
+    "date": "2000",
+    "label": "2000",
+    "event": "formalised",
+    "headline": "Fowler's article sets out continuous integration with self-testing builds",
+    "story": "Martin Fowler's continuous integration article (first version September 2000) described frequent integration backed by automated builds and tests, a practice Kent Beck developed within Extreme Programming. Automated checks catch mistakes without a person inspecting each change. For agents, tests, linters and type checkers are the feedback that lets them correct themselves.",
+    "roots": "Grady Booch used the phrase in 1991; Extreme Programming in the late 1990s",
+    "from": [],
+    "sources": [
+      {
+        "title": "Continuous Integration (Martin Fowler)",
+        "url": "https://martinfowler.com/articles/continuousIntegration.html"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Human review": {
+    "id": "Human review",
+    "date": "1976",
+    "label": "1976",
+    "event": "formalised",
+    "headline": "Michael Fagan formalises code inspections at IBM",
+    "story": "Fagan's 1976 IBM Systems Journal paper described structured design and code inspections as a way to find defects early. Peer review became standard, later moving into pull requests on GitHub from 2008. With agents producing more code, the cost of human review became a bottleneck.",
+    "from": [],
+    "sources": [
+      {
+        "title": "Design and code inspections to reduce errors in program development (Fagan, 1976)",
+        "url": "https://ieeexplore.ieee.org/document/5388086",
+        "unverified": true
+      }
+    ],
+    "confidence": "high"
+  },
+  "Automated review": {
+    "id": "Automated review",
+    "date": "2025-04",
+    "label": "Apr 2025",
+    "event": "shipped",
+    "headline": "GitHub Copilot code review becomes generally available",
+    "story": "On 4 April 2025 GitHub made Copilot code review generally available to paid subscribers: an agent that reviews pull requests for bugs and performance problems and suggests fixes. Tools such as CodeRabbit had offered LLM review earlier. It adds a model's judgement to automated checks, to reduce load on human reviewers.",
+    "from": [
+      "Automated check",
+      "Agent",
+      "Human review"
+    ],
+    "sources": [
+      {
+        "title": "Copilot code review now generally available (4 Apr 2025)",
+        "url": "https://github.blog/changelog/2025-04-04-copilot-code-review-now-generally-available/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Vibe coding": {
+    "id": "Vibe coding",
+    "date": "2025-02",
+    "label": "Feb 2025",
+    "event": "coined",
+    "headline": "Karpathy coins 'vibe coding': accepting AI code without reading it",
+    "story": "On 2 February 2025 Andrej Karpathy described 'vibe coding', where you prompt, accept the changes and stop reading the code. The term named a practice that capable agents made possible, skipping human review. Collins named it Word of the Year for 2025 on 6 November 2025.",
+    "from": [
+      "Human review",
+      "Agent"
+    ],
+    "sources": [
+      {
+        "title": "Karpathy on X (2 Feb 2025)",
+        "url": "https://x.com/karpathy/status/1886192184808149383",
+        "unverified": true
+      },
+      {
+        "title": "Vibe coding (Wikipedia: coinage and Collins WOTY 6 Nov 2025)",
+        "url": "https://en.wikipedia.org/wiki/Vibe_coding"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Design concept": {
+    "id": "Design concept",
+    "date": "1975",
+    "label": "1975",
+    "event": "formalised",
+    "headline": "Brooks argues that conceptual integrity matters most in system design",
+    "story": "In The Mythical Man-Month (1975) Fred Brooks argued that a system should reflect one coherent set of design ideas, held by a small group. He returned to shared design concepts in The Design of Design (2010). For agent work, a clear design concept is what lets a human and an agent agree on what is being built.",
+    "from": [],
+    "sources": [
+      {
+        "title": "The Design of Design (Wikipedia, 2010)",
+        "url": "https://en.wikipedia.org/wiki/The_Design_of_Design"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Grilling": {
+    "id": "Grilling",
+    "date": "2026-02",
+    "label": "Feb 2026",
+    "event": "popularised",
+    "headline": "Matt Pocock adds a grill-me skill: the agent interviews you about a plan",
+    "story": "Matt Pocock's skills repository includes grill-me, which has the agent question you about a plan or design until every branch is resolved. It reverses the usual flow so gaps surface before any code is written. It packages a Socratic questioning habit as a reusable skill.",
+    "roots": "Socratic questioning",
+    "from": [
+      "Design concept",
+      "Skill"
+    ],
+    "sources": [
+      {
+        "title": "mattpocock/skills — grill-me",
+        "url": "https://github.com/mattpocock/skills"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "Prototyping": {
+    "id": "Prototyping",
+    "date": "2024-06",
+    "label": "Jun 2024",
+    "event": "shipped",
+    "headline": "Claude Artifacts render generated code as a live preview next to the chat",
+    "story": "Anthropic launched Artifacts with Claude 3.5 Sonnet in June 2024, showing generated code, documents and sites in a side window to view and iterate on. Vercel's v0 had offered prompt-to-UI earlier. Cheap, quick prototypes let people test an idea before committing to a design.",
+    "roots": "Brooks, 'plan to throw one away' (1975)",
+    "from": [
+      "Design concept"
+    ],
+    "sources": [
+      {
+        "title": "Claude 3.5 Sonnet (Anthropic, June 2024)",
+        "url": "https://www.anthropic.com/news/claude-3-5-sonnet"
+      }
+    ],
+    "confidence": "high"
+  },
+  "DX": {
+    "id": "DX",
+    "date": "2012",
+    "label": "2012",
+    "event": "formalised",
+    "headline": "Fagerholm and Münch define 'developer experience' as a concept",
+    "story": "Fagerholm and Münch's paper 'Developer Experience: Concept and Definition' framed DX as how developers think and feel about their work and tools. It applied user-experience thinking to developers as users. AX later extended the same idea to agents.",
+    "from": [],
+    "sources": [
+      {
+        "title": "Developer Experience: Concept and Definition (arXiv 1312.1452)",
+        "url": "https://arxiv.org/abs/1312.1452"
+      }
+    ],
+    "confidence": "medium"
+  },
+  "AX": {
+    "id": "AX",
+    "date": "2025-01",
+    "label": "Jan 2025",
+    "event": "coined",
+    "headline": "Netlify's Mathias Biilmann introduces 'agent experience' (AX)",
+    "story": "On 28 January 2025 Mathias Biilmann defined AX as the overall experience AI agents have as users of a product or platform. As agents began operating tools, APIs and docs directly, designing only for human developers left gaps. It extends developer-experience thinking to agents.",
+    "from": [
+      "DX",
+      "Agent"
+    ],
+    "sources": [
+      {
+        "title": "Introducing AX: Why Agent Experience Matters (Biilmann, 28 Jan 2025)",
+        "url": "https://biilmann.blog/articles/introducing-ax/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Software factory": {
+    "id": "Software factory",
+    "date": "2026-02",
+    "label": "Feb 2026",
+    "event": "popularised",
+    "headline": "StrongDM describes a 'software factory' where agents write and verify code",
+    "story": "On 6 February 2026 StrongDM's AI team published how it runs non-interactive development: specs and scenarios drive agents that write code and converge without human review, tested against digital twins of third-party services. Simon Willison covered it the next day. It combines unattended agents, automated checks and ticket-style specs into a production line.",
+    "roots": "Hitachi's 1969 software factory (Cusumano, 1991)",
+    "from": [
+      "AFK",
+      "Automated check",
+      "Ticket"
+    ],
+    "sources": [
+      {
+        "title": "Software Factories And The Agentic Moment (StrongDM, 6 Feb 2026)",
+        "url": "https://factory.strongdm.ai"
+      },
+      {
+        "title": "Simon Willison on StrongDM's software factory (7 Feb 2026)",
+        "url": "https://simonwillison.net/2026/Feb/7/software-factory/"
+      }
+    ],
+    "confidence": "high"
+  },
+  "Dark factory": {
+    "id": "Dark factory",
+    "date": "2026-01",
+    "label": "Jan 2026",
+    "event": "coined",
+    "headline": "Dan Shapiro names Level 5 of AI coding the 'dark factory'",
+    "story": "On 23 January 2026 Dan Shapiro published five levels of AI-assisted coding, with Level 5 a 'dark factory' that turns specs into software with no human looking at the code. The name borrows from lights-out manufacturing such as Fanuc's robot-run plant. StrongDM's rule that code must not be reviewed by humans is an example.",
+    "roots": "Lights-out manufacturing",
+    "from": [
+      "Vibe coding",
+      "AFK"
+    ],
+    "sources": [
+      {
+        "title": "The Five Levels: from Spicy Autocomplete to the Dark Factory (Shapiro, 23 Jan 2026)",
+        "url": "https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/"
+      },
+      {
+        "title": "Simon Willison: The five levels (28 Jan 2026)",
+        "url": "https://simonwillison.net/2026/Jan/28/the-five-levels/"
+      }
+    ],
+    "confidence": "high"
+  }
+}

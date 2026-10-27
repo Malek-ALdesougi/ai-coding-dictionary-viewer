@@ -1,0 +1,15 @@
+/* resizable details panel (wider only; 460px is the minimum) */
+.resizer { position: fixed; top: var(--bar-h); bottom: 0; width: 14px; right: calc(min(var(--panel-w), 100%) - 7px); z-index: 6; cursor: col-resize; display: none; touch-action: none; }
+@media (min-width: 701px) { body.panel-open .resizer { display: block; } }
+.resizer::before { content: ""; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: var(--accent-2); opacity: 0; transition: opacity .2s; }
+.resizer:hover::before, .resizer:focus-visible::before, body.resizing .resizer::before { opacity: .85; }
+.resizer .grip { position: absolute; left: 1px; top: 50%; width: 12px; height: 44px; margin-top: -22px; border-radius: 7px; background: var(--panel); border: 1px solid var(--border);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; transition: border-color .2s, background .2s; box-shadow: 0 2px 8px var(--shadow); }
+.resizer .grip i { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
+.resizer:hover .grip, .resizer:focus-visible .grip, body.resizing .resizer .grip { border-color: var(--accent-2); background: var(--raised); }
+.resizer:hover .grip i, body.resizing .resizer .grip i { background: var(--accent-2); }
+.resizer .wbadge { position: absolute; right: 22px; top: 50%; transform: translateY(-50%); background: var(--ink); color: var(--bg); font: 600 11px ui-monospace, Menlo, monospace; padding: 4px 8px; border-radius: 6px; opacity: 0; pointer-events: none; transition: opacity .15s; white-space: nowrap; }
+body.resizing .resizer .wbadge, .resizer.showw .wbadge { opacity: 1; }
+body.resizing { cursor: col-resize; user-select: none; -webkit-user-select: none; }
+body.resizing svg, body.resizing aside { pointer-events: none; }
+body.resizing aside { transition: none; }

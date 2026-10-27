@@ -1,0 +1,8 @@
+/* icons: same size or larger than the label text */
+svg.i { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: -4px; overflow: visible; }
+svg.i .fill, svg.i path.fill { fill: currentColor; stroke: none; }
+.btn .ico { display: inline-flex; align-items: center; }
+.btn { gap: 8px; font-size: 12px; }
+.btn.theme { gap: 8px; }
+.btn.copy, .btn.play, #tlhelp-btn { display: inline-flex; align-items: center; gap: 8px; }
+.btn.stop.show { display: inline-flex; align-items: center; gap: 8px; } .btn.stop:not(.show) { display: none; }

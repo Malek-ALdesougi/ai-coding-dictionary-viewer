@@ -1,0 +1,13 @@
+/* ================= v3: guide layer ================= */
+:root { --bar-h: 56px; }
+:root, :root[data-theme="light"] {
+  --sec1: #0369A1; --sec2: #7C3AED; --sec3: #15803D; --sec4: #B34A0B; --sec5: #BE185D; --sec6: #A16207; --sec7: #0F766E;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --sec1: #38BDF8; --sec2: #A78BFA; --sec3: #4ADE80; --sec4: #FF8A3D; --sec5: #F472B6; --sec6: #FACC15; --sec7: #2DD4BF; }
+}
+:root[data-theme="dark"] { --sec1: #38BDF8; --sec2: #A78BFA; --sec3: #4ADE80; --sec4: #FF8A3D; --sec5: #F472B6; --sec6: #FACC15; --sec7: #2DD4BF; }
+svg { touch-action: none; }
+button:focus-visible, a:focus-visible, input:focus-visible, .res:focus-visible, .trow:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+.lvl-off { opacity: .1 !important; }
+.node text.lbl-hide { opacity: 0; }

@@ -1,0 +1,9 @@
+/* panel additions */
+.p-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-right: 30px; margin-bottom: 8px; }
+.p-top .eyebrow { margin: 0; }
+.plainbox { margin: 0 0 16px; }
+.plainbox .label { margin: 0 0 6px; }
+.plainbox p { font-size: 16.5px; line-height: 1.5; font-weight: 600; margin: 0; }
+aside .label { margin-top: 20px; }
+aside .desc + .history { margin-top: 18px; }
+.tip .tl { display: block; font: 600 10px ui-monospace, Menlo, monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-2); margin: 0 0 4px; }
